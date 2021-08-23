@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveryApp.View", "DeliveryApp.View\DeliveryApp.View.csproj", "{F37729E0-380D-4544-AFDD-C096BE18CC3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeliveryApp.Presentation", "DeliveryApp.Presentation\DeliveryApp.Presentation.csproj", "{F37729E0-380D-4544-AFDD-C096BE18CC3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveryApp.Logic", "DeliveryApp.Logic\DeliveryApp.Logic.csproj", "{F932E300-CF2C-4072-AA67-3E73CEF9157E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveryApp.Data", "DeliveryApp.Data\DeliveryApp.Data.csproj", "{381F1992-2896-43B1-98A7-B08945635535}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{F37729E0-380D-4544-AFDD-C096BE18CC3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F37729E0-380D-4544-AFDD-C096BE18CC3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F37729E0-380D-4544-AFDD-C096BE18CC3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F932E300-CF2C-4072-AA67-3E73CEF9157E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F932E300-CF2C-4072-AA67-3E73CEF9157E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F932E300-CF2C-4072-AA67-3E73CEF9157E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F932E300-CF2C-4072-AA67-3E73CEF9157E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{381F1992-2896-43B1-98A7-B08945635535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{381F1992-2896-43B1-98A7-B08945635535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{381F1992-2896-43B1-98A7-B08945635535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{381F1992-2896-43B1-98A7-B08945635535}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
