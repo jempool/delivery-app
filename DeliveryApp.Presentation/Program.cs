@@ -1,7 +1,8 @@
 using System;
 using System.Windows.Forms;
+using DeliveryApp.Presentation.Orders;
 
-namespace DeliveryApp.View
+namespace DeliveryApp.Presentation
 {
     static class Program
     {

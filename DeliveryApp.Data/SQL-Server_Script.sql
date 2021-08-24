@@ -54,6 +54,7 @@ CREATE TABLE Invoices (
 	ID INT NOT NULL PRIMARY KEY,
     InvoiceNumber BIGINT NOT NULL,
 	ExpeditionDate DATETIME NOT NULL,
+    Details VARCHAR(500),
     OrderId int FOREIGN KEY REFERENCES Orders(ID),
 )
 

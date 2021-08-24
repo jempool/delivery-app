@@ -6,4 +6,8 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DeliveryApp.Logic\DeliveryApp.Logic.csproj" />
+  </ItemGroup>
+
 </Project>
