@@ -15,5 +15,10 @@ namespace DeliveryApp.Presentation
             CustomersForm customersForm = new();
             customersForm.ShowDialog();
         }
+
+        private void btnAddProduct_Click(object sender, System.EventArgs e)
+        {
+            // add product
+        }
     }
 }

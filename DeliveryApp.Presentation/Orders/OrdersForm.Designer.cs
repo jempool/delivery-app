@@ -1,4 +1,5 @@
-﻿
+﻿using System.Windows.Forms;
+
 namespace DeliveryApp.Presentation
 {
     partial class OrdersForm
@@ -30,17 +31,30 @@ namespace DeliveryApp.Presentation
         private void InitializeComponent()
         {
             this.grpBxOrders = new System.Windows.Forms.GroupBox();
+            this.dtTmPckrDueTime = new System.Windows.Forms.DateTimePicker();
+            this.lblOrderDueTime = new System.Windows.Forms.Label();
+            this.nmrcUpDwnQtyProduct = new System.Windows.Forms.NumericUpDown();
+            this.lblOrderQtyProduct = new System.Windows.Forms.Label();
+            this.cmbBxListProducts = new System.Windows.Forms.ComboBox();
             this.btnEditCustomer = new System.Windows.Forms.Button();
             this.lstVwSearchResult = new System.Windows.Forms.ListView();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.txtBxSearchCustomer = new System.Windows.Forms.TextBox();
             this.lblOrderTitleRight = new System.Windows.Forms.Label();
             this.lblOrderTitleLeft = new System.Windows.Forms.Label();
+            this.btnAddProduct = new System.Windows.Forms.Button();
             this.grpBxOrders.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrcUpDwnQtyProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // grpBxOrders
             // 
+            this.grpBxOrders.Controls.Add(this.btnAddProduct);
+            this.grpBxOrders.Controls.Add(this.dtTmPckrDueTime);
+            this.grpBxOrders.Controls.Add(this.lblOrderDueTime);
+            this.grpBxOrders.Controls.Add(this.nmrcUpDwnQtyProduct);
+            this.grpBxOrders.Controls.Add(this.lblOrderQtyProduct);
+            this.grpBxOrders.Controls.Add(this.cmbBxListProducts);
             this.grpBxOrders.Controls.Add(this.btnEditCustomer);
             this.grpBxOrders.Controls.Add(this.lstVwSearchResult);
             this.grpBxOrders.Controls.Add(this.btnAddCustomer);
@@ -53,6 +67,70 @@ namespace DeliveryApp.Presentation
             this.grpBxOrders.TabIndex = 0;
             this.grpBxOrders.TabStop = false;
             this.grpBxOrders.Text = " Orders ";
+            // 
+            // dtTmPckrDueTime
+            // 
+            this.dtTmPckrDueTime.CustomFormat = "hh:mm tt dd/MM/yyyy";
+            this.dtTmPckrDueTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtTmPckrDueTime.Location = new System.Drawing.Point(87, 180);
+            this.dtTmPckrDueTime.Name = "dtTmPckrDueTime";
+            this.dtTmPckrDueTime.Size = new System.Drawing.Size(165, 23);
+            this.dtTmPckrDueTime.TabIndex = 10;
+            // 
+            // lblOrderDueTime
+            // 
+            this.lblOrderDueTime.AutoSize = true;
+            this.lblOrderDueTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblOrderDueTime.Location = new System.Drawing.Point(17, 183);
+            this.lblOrderDueTime.Name = "lblOrderDueTime";
+            this.lblOrderDueTime.Size = new System.Drawing.Size(64, 15);
+            this.lblOrderDueTime.TabIndex = 9;
+            this.lblOrderDueTime.Text = "Due Time:";
+            // 
+            // nmrcUpDwnQtyProduct
+            // 
+            this.nmrcUpDwnQtyProduct.Location = new System.Drawing.Point(204, 215);
+            this.nmrcUpDwnQtyProduct.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nmrcUpDwnQtyProduct.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmrcUpDwnQtyProduct.Name = "nmrcUpDwnQtyProduct";
+            this.nmrcUpDwnQtyProduct.Size = new System.Drawing.Size(40, 23);
+            this.nmrcUpDwnQtyProduct.TabIndex = 8;
+            this.nmrcUpDwnQtyProduct.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // lblOrderQtyProduct
+            // 
+            this.lblOrderQtyProduct.AutoSize = true;
+            this.lblOrderQtyProduct.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblOrderQtyProduct.Location = new System.Drawing.Point(168, 218);
+            this.lblOrderQtyProduct.Name = "lblOrderQtyProduct";
+            this.lblOrderQtyProduct.Size = new System.Drawing.Size(30, 15);
+            this.lblOrderQtyProduct.TabIndex = 7;
+            this.lblOrderQtyProduct.Text = "Qty:";
+            // 
+            // cmbBxListProducts
+            // 
+            this.cmbBxListProducts.FormattingEnabled = true;
+            this.cmbBxListProducts.Items.AddRange(new object[] {
+            "Product1",
+            "Product2",
+            "Product3"});
+            this.cmbBxListProducts.Location = new System.Drawing.Point(19, 215);
+            this.cmbBxListProducts.Name = "cmbBxListProducts";
+            this.cmbBxListProducts.Size = new System.Drawing.Size(143, 23);
+            this.cmbBxListProducts.TabIndex = 6;
+            this.cmbBxListProducts.Text = "Product1";
             // 
             // btnEditCustomer
             // 
@@ -109,6 +187,16 @@ namespace DeliveryApp.Presentation
             this.lblOrderTitleLeft.TabIndex = 0;
             this.lblOrderTitleLeft.Text = "Customer:";
             // 
+            // btnAddProduct
+            // 
+            this.btnAddProduct.Location = new System.Drawing.Point(258, 215);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(105, 23);
+            this.btnAddProduct.TabIndex = 11;
+            this.btnAddProduct.Text = "Add Product";
+            this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
+            // 
             // OrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -118,6 +206,7 @@ namespace DeliveryApp.Presentation
             this.Name = "OrdersForm";
             this.grpBxOrders.ResumeLayout(false);
             this.grpBxOrders.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrcUpDwnQtyProduct)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -131,6 +220,12 @@ namespace DeliveryApp.Presentation
         private System.Windows.Forms.TextBox txtBxSearchCustomer;
         private System.Windows.Forms.ListView lstVwSearchResult;
         private System.Windows.Forms.Button btnEditCustomer;
+        private System.Windows.Forms.ComboBox cmbBxListProducts;
+        private System.Windows.Forms.Label lblOrderQtyProduct;
+        private System.Windows.Forms.NumericUpDown nmrcUpDwnQtyProduct;
+        private System.Windows.Forms.DateTimePicker dtTmPckrDueTime;
+        private System.Windows.Forms.Label lblOrderDueTime;
+        private Button btnAddProduct;
     }
 }
 

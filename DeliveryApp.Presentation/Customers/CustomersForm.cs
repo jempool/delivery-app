@@ -16,7 +16,12 @@ namespace DeliveryApp.Presentation
             string customerName = txtBxCustomerName.Text;
             string customerFono = txtBxCustomerFono.Text;
             string customerAddress = txtBxCustomerAddress.Text;
+            
             CustomersLogic.Create(customerName, customerFono, customerAddress);
+
+            txtBxCustomerName.Text = string.Empty;
+            txtBxCustomerFono.Text = string.Empty;
+            txtBxCustomerAddress.Text = string.Empty;
         }
 
         private void btnCancelCreateCustomer_Click(object sender, EventArgs e)
