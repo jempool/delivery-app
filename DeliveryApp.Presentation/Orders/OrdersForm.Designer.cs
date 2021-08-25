@@ -1,5 +1,5 @@
 ﻿
-namespace DeliveryApp.Presentation.Orders
+namespace DeliveryApp.Presentation
 {
     partial class OrdersForm
     {
@@ -56,7 +56,7 @@ namespace DeliveryApp.Presentation.Orders
             // 
             // btnEditCustomer
             // 
-            this.btnEditCustomer.Location = new System.Drawing.Point(308, 103);
+            this.btnEditCustomer.Location = new System.Drawing.Point(306, 103);
             this.btnEditCustomer.Name = "btnEditCustomer";
             this.btnEditCustomer.Size = new System.Drawing.Size(50, 23);
             this.btnEditCustomer.TabIndex = 5;
@@ -66,7 +66,7 @@ namespace DeliveryApp.Presentation.Orders
             // lstVwSearchResult
             // 
             this.lstVwSearchResult.HideSelection = false;
-            this.lstVwSearchResult.Location = new System.Drawing.Point(21, 94);
+            this.lstVwSearchResult.Location = new System.Drawing.Point(19, 94);
             this.lstVwSearchResult.Name = "lstVwSearchResult";
             this.lstVwSearchResult.Size = new System.Drawing.Size(348, 78);
             this.lstVwSearchResult.TabIndex = 4;
@@ -74,7 +74,7 @@ namespace DeliveryApp.Presentation.Orders
             // 
             // btnAddCustomer
             // 
-            this.btnAddCustomer.Location = new System.Drawing.Point(260, 65);
+            this.btnAddCustomer.Location = new System.Drawing.Point(258, 65);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(109, 23);
             this.btnAddCustomer.TabIndex = 3;
@@ -84,7 +84,7 @@ namespace DeliveryApp.Presentation.Orders
             // 
             // txtBxSearchCustomer
             // 
-            this.txtBxSearchCustomer.Location = new System.Drawing.Point(21, 65);
+            this.txtBxSearchCustomer.Location = new System.Drawing.Point(19, 65);
             this.txtBxSearchCustomer.Name = "txtBxSearchCustomer";
             this.txtBxSearchCustomer.Size = new System.Drawing.Size(233, 23);
             this.txtBxSearchCustomer.TabIndex = 2;
@@ -93,7 +93,7 @@ namespace DeliveryApp.Presentation.Orders
             // 
             this.lblOrderTitleRight.AutoSize = true;
             this.lblOrderTitleRight.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblOrderTitleRight.Location = new System.Drawing.Point(274, 19);
+            this.lblOrderTitleRight.Location = new System.Drawing.Point(272, 19);
             this.lblOrderTitleRight.Name = "lblOrderTitleRight";
             this.lblOrderTitleRight.Size = new System.Drawing.Size(56, 30);
             this.lblOrderTitleRight.TabIndex = 1;
@@ -103,7 +103,7 @@ namespace DeliveryApp.Presentation.Orders
             // 
             this.lblOrderTitleLeft.AutoSize = true;
             this.lblOrderTitleLeft.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblOrderTitleLeft.Location = new System.Drawing.Point(21, 34);
+            this.lblOrderTitleLeft.Location = new System.Drawing.Point(19, 34);
             this.lblOrderTitleLeft.Name = "lblOrderTitleLeft";
             this.lblOrderTitleLeft.Size = new System.Drawing.Size(64, 15);
             this.lblOrderTitleLeft.TabIndex = 0;

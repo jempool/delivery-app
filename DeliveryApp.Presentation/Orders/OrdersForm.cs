@@ -1,8 +1,7 @@
 ﻿using System.Windows.Forms;
-using DeliveryApp.Presentation.Customers;
 
 
-namespace DeliveryApp.Presentation.Orders
+namespace DeliveryApp.Presentation
 {
     public partial class OrdersForm : Form
     {
