@@ -1,27 +1,29 @@
-﻿using System;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 namespace DeliveryApp.Data
 {
-    public class Connection
-    {
-        public static SqlConnection Connect()
+    public static class Connection
+    {          
+        public static SqlDataReader ExecuteSQLQuery(string query)
         {
-            SqlConnection cn = new SqlConnection("SERVER=(localdb)\\MSSQLLocalDB;DATABASE=SQLDeliveryDB;Integrated security=true");
-            cn.Open();
+            string connectionString = GetConnectionString();
+            SqlDataReader dataReader = null;
 
-            try
+            using (SqlConnection connection = new())
             {
-                cn.Open();
-                Console.WriteLine("Connected!");
-                cn.Close();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Connection fails {0}", ex);
+                connection.ConnectionString = connectionString;
+                connection.Open();
+                var command = new SqlCommand(query, connection);
+                dataReader = command.ExecuteReader();    
             }
 
-            return cn;
+            return dataReader;
+        }
+
+        static private string GetConnectionString()
+        {
+            return "Server=(localdb)\\MSSQLLocalDB;Database=SQLDeliveryDB;"
+            + "Trusted_Connection=True;MultipleActiveResultSets=true";
         }
     }
 }
