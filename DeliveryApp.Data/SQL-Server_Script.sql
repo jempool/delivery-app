@@ -13,22 +13,21 @@ GO
 USE [SQLDeliveryDB]
 
 CREATE TABLE Customers (
-	ID INT NOT NULL PRIMARY KEY,
+	ID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	Name VARCHAR(100) NOT NULL,
-    LastName VARCHAR(100) NOT NULL,
     PhoneNumber BIGINT NOT NULL,
     Address VARCHAR(500),
 )
 
 CREATE TABLE Products (
-	ID INT NOT NULL PRIMARY KEY,
+	ID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	Name VARCHAR(100) NOT NULL,
-    Price INT  NOT NULL,
+    Price INT NOT NULL,
     Details VARCHAR(500),
 )
 
 CREATE TABLE Categories (
-	ID INT NOT NULL PRIMARY KEY,
+	ID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	Name VARCHAR(100) NOT NULL,
 )
 
@@ -38,7 +37,7 @@ CREATE TABLE CategoriesProducts (
 )
 
 CREATE TABLE Orders (
-	ID INT NOT NULL PRIMARY KEY,
+	ID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     OrderNumber BIGINT NOT NULL,
 	DueTime DATETIME NOT NULL,
     TotalPrice BIGINT NOT NULL,
@@ -51,7 +50,7 @@ CREATE TABLE OrdersProducts (
 )
 
 CREATE TABLE Invoices (
-	ID INT NOT NULL PRIMARY KEY,
+	ID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     InvoiceNumber BIGINT NOT NULL,
 	ExpeditionDate DATETIME NOT NULL,
     Details VARCHAR(500),
@@ -59,7 +58,7 @@ CREATE TABLE Invoices (
 )
 
 CREATE TABLE Deliveries (
-	ID INT NOT NULL PRIMARY KEY,
+	ID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	Status BIT NOT NULL,
     OrderId int FOREIGN KEY REFERENCES Orders(ID),
 )
@@ -69,15 +68,15 @@ GO
 
 USE [SQLDeliveryDB]
 
-INSERT INTO Products (ID, Name, Price, Details) VALUES (1, 'Pizza', 150, 'Peperoni')
-INSERT INTO Products (ID, Name, Price, Details) VALUES (2, 'Coke', 3, 'Light')
-INSERT INTO Products (ID, Name, Price) VALUES (3, 'Burguer Cheese', 25)
-INSERT INTO Products (ID, Name, Price) VALUES (4, 'Hotdog', 20)
-INSERT INTO Products (ID, Name, Price, Details) VALUES (5, 'Salad', 15, 'Small')
+INSERT INTO Products (Name, Price, Details) VALUES ('Pizza', 150, 'Peperoni')
+INSERT INTO Products (Name, Price, Details) VALUES ('Coke', 3, 'Light')
+INSERT INTO Products (Name, Price) VALUES ('Burguer Cheese', 25)
+INSERT INTO Products (Name, Price) VALUES ('Hotdog', 20)
+INSERT INTO Products (Name, Price, Details) VALUES ('Salad', 15, 'Small')
 
-INSERT INTO Categories (ID, Name) VALUES (1, 'Fast Food')
-INSERT INTO Categories (ID, Name) VALUES (2, 'Beverage')
-INSERT INTO Categories (ID, Name) VALUES (3, 'Vegetarian Food')
+INSERT INTO Categories (Name) VALUES ('Fast Food')
+INSERT INTO Categories (Name) VALUES ('Beverage')
+INSERT INTO Categories (Name) VALUES ('Vegetarian Food')
 
 INSERT INTO CategoriesProducts (CategoryID, ProductID) VALUES (1, 1)
 INSERT INTO CategoriesProducts (CategoryID, ProductID) VALUES (2, 2)
