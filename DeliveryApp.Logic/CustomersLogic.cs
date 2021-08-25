@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using DeliveryApp.Data;
+using DeliveryApp.Data.Models;
 
 namespace DeliveryApp.Logic
 {
@@ -14,6 +16,11 @@ namespace DeliveryApp.Logic
             // TODO: implement method
             int id = 0;
             CustomersData.Update(id, customerName, customerFono, customerAddress); 
+        }
+
+        public static List<Customer> GetAll()
+        {
+            return CustomersData.GetAll();
         }
     }
 }

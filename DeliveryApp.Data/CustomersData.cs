@@ -1,4 +1,8 @@
 using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using DeliveryApp.Data.Models;
 
 namespace DeliveryApp.Data
 {
@@ -15,6 +19,23 @@ namespace DeliveryApp.Data
         public static void Update(int Id, string customerName, string customerFono, string customerAddress)
         {
             Console.WriteLine($"Update Customer: {Id}, {customerName}, {customerFono}, {customerAddress}\n");
+        }
+
+        public static List<Customer> GetAll()
+        {
+            string query = "SELECT * FROM Customers";
+            
+            var dataTable = Connection.ExecuteSQLQuery(query);
+            List<Customer> customertList = (from DataRow dr in dataTable.Rows  
+            select new Customer()  
+            {  
+                Id = Convert .ToInt32 (dr["ID"]),  
+                Name = dr["Name"].ToString(),  
+                PhoneNumber = (long)dr["PhoneNumber"],  
+                Address = dr["Address"].ToString()
+            }).ToList(); 
+
+            return customertList;
         }
     }   
 }

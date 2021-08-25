@@ -1,5 +1,4 @@
-﻿
-namespace DeliveryApp.Presentation
+﻿namespace DeliveryApp.Presentation
 {
     partial class CustomersForm
     {
@@ -30,6 +29,10 @@ namespace DeliveryApp.Presentation
         private void InitializeComponent()
         {
             this.grpBxCustomers = new System.Windows.Forms.GroupBox();
+            this.lstVwCustomersList = new System.Windows.Forms.ListView();
+            this.columnHeaderName = new System.Windows.Forms.ColumnHeader();
+            this.columnHeaderFono = new System.Windows.Forms.ColumnHeader();
+            this.columnHeaderAddress = new System.Windows.Forms.ColumnHeader();
             this.btnCancelCreateCustomer = new System.Windows.Forms.Button();
             this.btnCreateCustomer = new System.Windows.Forms.Button();
             this.lblCustomerFono = new System.Windows.Forms.Label();
@@ -43,6 +46,7 @@ namespace DeliveryApp.Presentation
             // 
             // grpBxCustomers
             // 
+            this.grpBxCustomers.Controls.Add(this.lstVwCustomersList);
             this.grpBxCustomers.Controls.Add(this.btnCancelCreateCustomer);
             this.grpBxCustomers.Controls.Add(this.btnCreateCustomer);
             this.grpBxCustomers.Controls.Add(this.lblCustomerFono);
@@ -53,14 +57,43 @@ namespace DeliveryApp.Presentation
             this.grpBxCustomers.Controls.Add(this.txtBxCustomerName);
             this.grpBxCustomers.Location = new System.Drawing.Point(13, 13);
             this.grpBxCustomers.Name = "grpBxCustomers";
-            this.grpBxCustomers.Size = new System.Drawing.Size(384, 425);
+            this.grpBxCustomers.Size = new System.Drawing.Size(384, 519);
             this.grpBxCustomers.TabIndex = 0;
             this.grpBxCustomers.TabStop = false;
             this.grpBxCustomers.Text = " Add Customer";
             // 
+            // lstVwCustomersList
+            // 
+            this.lstVwCustomersList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderName,
+            this.columnHeaderFono,
+            this.columnHeaderAddress});
+            this.lstVwCustomersList.HideSelection = false;
+            this.lstVwCustomersList.Location = new System.Drawing.Point(21, 274);
+            this.lstVwCustomersList.Name = "lstVwCustomersList";
+            this.lstVwCustomersList.Size = new System.Drawing.Size(339, 216);
+            this.lstVwCustomersList.TabIndex = 9;
+            this.lstVwCustomersList.UseCompatibleStateImageBehavior = false;
+            this.lstVwCustomersList.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeaderName
+            // 
+            this.columnHeaderName.Text = "Name";
+            this.columnHeaderName.Width = 120;
+            // 
+            // columnHeaderFono
+            // 
+            this.columnHeaderFono.Text = "Fono";
+            this.columnHeaderFono.Width = 95;
+            // 
+            // columnHeaderAddress
+            // 
+            this.columnHeaderAddress.Text = "Address";
+            this.columnHeaderAddress.Width = 120;
+            // 
             // btnCancelCreateCustomer
             // 
-            this.btnCancelCreateCustomer.Location = new System.Drawing.Point(210, 211);
+            this.btnCancelCreateCustomer.Location = new System.Drawing.Point(210, 200);
             this.btnCancelCreateCustomer.Name = "btnCancelCreateCustomer";
             this.btnCancelCreateCustomer.Size = new System.Drawing.Size(75, 23);
             this.btnCancelCreateCustomer.TabIndex = 8;
@@ -70,7 +103,7 @@ namespace DeliveryApp.Presentation
             // 
             // btnCreateCustomer
             // 
-            this.btnCreateCustomer.Location = new System.Drawing.Point(102, 211);
+            this.btnCreateCustomer.Location = new System.Drawing.Point(102, 200);
             this.btnCreateCustomer.Name = "btnCreateCustomer";
             this.btnCreateCustomer.Size = new System.Drawing.Size(75, 23);
             this.btnCreateCustomer.TabIndex = 7;
@@ -133,7 +166,7 @@ namespace DeliveryApp.Presentation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 450);
+            this.ClientSize = new System.Drawing.Size(409, 545);
             this.Controls.Add(this.grpBxCustomers);
             this.Name = "CustomersForm";
             this.grpBxCustomers.ResumeLayout(false);
@@ -153,5 +186,9 @@ namespace DeliveryApp.Presentation
         private System.Windows.Forms.TextBox txtBxCustomerAddress;
         private System.Windows.Forms.Button btnCreateCustomer;
         private System.Windows.Forms.Button btnCancelCreateCustomer;
+        private System.Windows.Forms.ListView lstVwCustomersList;
+        private System.Windows.Forms.ColumnHeader columnHeaderName;
+        private System.Windows.Forms.ColumnHeader columnHeaderFono;
+        private System.Windows.Forms.ColumnHeader columnHeaderAddress;
     }
 }

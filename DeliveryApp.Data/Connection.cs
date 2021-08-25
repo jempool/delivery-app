@@ -1,23 +1,25 @@
-﻿using System.Data.SqlClient;
+﻿using System.Data;
+using System.Data.SqlClient;
 
 namespace DeliveryApp.Data
 {
     public static class Connection
     {          
-        public static SqlDataReader ExecuteSQLQuery(string query)
+        public static DataTable ExecuteSQLQuery(string query)
         {
             string connectionString = GetConnectionString();
-            SqlDataReader dataReader = null;
+            var dataTable = new DataTable();
 
             using (SqlConnection connection = new())
             {
                 connection.ConnectionString = connectionString;
                 connection.Open();
                 var command = new SqlCommand(query, connection);
-                dataReader = command.ExecuteReader();    
+                var dataReader = command.ExecuteReader();   
+                dataTable.Load(dataReader); 
             }
 
-            return dataReader;
+            return dataTable;
         }
 
         static private string GetConnectionString()

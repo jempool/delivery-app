@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using DeliveryApp.Logic;
 
 namespace DeliveryApp.Presentation
 {
@@ -31,6 +32,8 @@ namespace DeliveryApp.Presentation
         private void InitializeComponent()
         {
             this.grpBxOrders = new System.Windows.Forms.GroupBox();
+            this.lblOrderNumber = new System.Windows.Forms.Label();
+            this.txtBxOrderTotal = new System.Windows.Forms.TextBox();
             this.btnCancelOrder = new System.Windows.Forms.Button();
             this.btnCreateOrder = new System.Windows.Forms.Button();
             this.lblOrderTotal = new System.Windows.Forms.Label();
@@ -52,8 +55,6 @@ namespace DeliveryApp.Presentation
             this.txtBxSearchCustomer = new System.Windows.Forms.TextBox();
             this.lblOrderTitleRight = new System.Windows.Forms.Label();
             this.lblOrderTitleLeft = new System.Windows.Forms.Label();
-            this.txtBxOrderTotal = new System.Windows.Forms.TextBox();
-            this.lblOrderNumber = new System.Windows.Forms.Label();
             this.grpBxOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrcUpDwnQtyProduct)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +87,24 @@ namespace DeliveryApp.Presentation
             this.grpBxOrders.TabIndex = 0;
             this.grpBxOrders.TabStop = false;
             this.grpBxOrders.Text = " Orders ";
+            // 
+            // lblOrderNumber
+            // 
+            this.lblOrderNumber.AutoSize = true;
+            this.lblOrderNumber.Location = new System.Drawing.Point(328, 34);
+            this.lblOrderNumber.Name = "lblOrderNumber";
+            this.lblOrderNumber.Size = new System.Drawing.Size(25, 15);
+            this.lblOrderNumber.TabIndex = 21;
+            this.lblOrderNumber.Text = "005";
+            // 
+            // txtBxOrderTotal
+            // 
+            this.txtBxOrderTotal.BackColor = System.Drawing.Color.White;
+            this.txtBxOrderTotal.Location = new System.Drawing.Point(267, 436);
+            this.txtBxOrderTotal.Name = "txtBxOrderTotal";
+            this.txtBxOrderTotal.ReadOnly = true;
+            this.txtBxOrderTotal.Size = new System.Drawing.Size(100, 23);
+            this.txtBxOrderTotal.TabIndex = 20;
             // 
             // btnCancelOrder
             // 
@@ -292,24 +311,6 @@ namespace DeliveryApp.Presentation
             this.lblOrderTitleLeft.Size = new System.Drawing.Size(64, 15);
             this.lblOrderTitleLeft.TabIndex = 0;
             this.lblOrderTitleLeft.Text = "Customer:";
-            // 
-            // txtBxOrderTotal
-            // 
-            this.txtBxOrderTotal.BackColor = System.Drawing.Color.White;
-            this.txtBxOrderTotal.Location = new System.Drawing.Point(267, 436);
-            this.txtBxOrderTotal.Name = "txtBxOrderTotal";
-            this.txtBxOrderTotal.ReadOnly = true;
-            this.txtBxOrderTotal.Size = new System.Drawing.Size(100, 23);
-            this.txtBxOrderTotal.TabIndex = 20;
-            // 
-            // lblOrderNumber
-            // 
-            this.lblOrderNumber.AutoSize = true;
-            this.lblOrderNumber.Location = new System.Drawing.Point(328, 34);
-            this.lblOrderNumber.Name = "lblOrderNumber";
-            this.lblOrderNumber.Size = new System.Drawing.Size(25, 15);
-            this.lblOrderNumber.TabIndex = 21;
-            this.lblOrderNumber.Text = "005";
             // 
             // OrdersForm
             // 

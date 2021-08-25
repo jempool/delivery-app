@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using DeliveryApp.Data.Models;
 using DeliveryApp.Logic;
 
 namespace DeliveryApp.Presentation
@@ -9,6 +10,16 @@ namespace DeliveryApp.Presentation
         public CustomersForm()
         {
             InitializeComponent();
+            LoadCustomerData();
+        }
+
+        private void LoadCustomerData(){
+            this.lstVwCustomersList.Items.Clear();
+            foreach (Customer customer in CustomersLogic.GetAll())
+            {
+                var listViewItem = new ListViewItem(customer.ToArrString());
+                this.lstVwCustomersList.Items.Add(listViewItem);
+            }
         }
 
         private void btnCreateCustomer_Click(object sender, System.EventArgs e)
@@ -18,6 +29,7 @@ namespace DeliveryApp.Presentation
             string customerAddress = txtBxCustomerAddress.Text;
             
             CustomersLogic.Create(customerName, customerFono, customerAddress);
+            LoadCustomerData();
 
             txtBxCustomerName.Text = string.Empty;
             txtBxCustomerFono.Text = string.Empty;
