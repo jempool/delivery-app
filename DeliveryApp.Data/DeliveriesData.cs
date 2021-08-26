@@ -23,7 +23,28 @@ namespace DeliveryApp.Data
                          + " INNER JOIN Customers ON Orders.CustomerId=Customers.ID";
             
             var dataTable = Connection.ExecuteSQLQuery(query);
-            List<Delivery> deliveriesList = (from DataRow dr in dataTable.Rows  
+            List<Delivery> deliveryList = DeliveriesData.DateTableToDeliveryList(dataTable);
+
+            return deliveryList;
+        }
+
+        public static List<Delivery> FilterByDateRange(DateTime from, DateTime to)
+        {
+            string query = "SELECT Deliveries.ID, Orders.OrderNumber, Orders.DueTime, Customers.Name, Deliveries.Status"
+                         + " FROM Orders INNER JOIN Deliveries ON Orders.ID=Deliveries.ID"
+                         + " INNER JOIN Customers ON Orders.CustomerId=Customers.ID"
+                         + $" WHERE '{from:yyyy-MM-dd}' <= CONVERT(date, Orders.DueTime)"
+                         + $" AND CONVERT(date, Orders.DueTime) <= '{to:yyyy-MM-dd}'";
+            
+            var dataTable = Connection.ExecuteSQLQuery(query);
+            List<Delivery> deliveryList = DeliveriesData.DateTableToDeliveryList(dataTable);
+
+            return deliveryList;
+        }
+
+        private static List<Delivery> DateTableToDeliveryList(DataTable dataTable)
+        {
+            List<Delivery> deliveryList = (from DataRow dr in dataTable.Rows  
             select new Delivery()  
             {  
                 Id = Convert .ToInt32 (dr["ID"]),
@@ -33,7 +54,7 @@ namespace DeliveryApp.Data
                 Status = dr["Status"].ToString()
             }).ToList(); 
 
-            return deliveriesList;
+            return deliveryList;
         }
     }   
 }

@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 using DeliveryApp.Data.Models;
 using DeliveryApp.Logic;
 
@@ -14,7 +16,13 @@ namespace DeliveryApp.Presentation
 
         private void LoadDeliveriesData(){
             this.lstVwDeliveriesList.Items.Clear();
-            foreach (Delivery delivery in DeliveriesLogic.GetAll())
+
+            DateTime from = this.dtTmPckrDeliveriesFrom.Value;
+            DateTime to = this.dtTmPckrDeliveriesTo.Value;
+
+            List<Delivery> filteredDeliveries = DeliveriesLogic.FilterByDateRange(from, to);
+
+            foreach (Delivery delivery in filteredDeliveries)
             {
                 var listViewItem = new ListViewItem(delivery.ToArrString());
                 this.lstVwDeliveriesList.Items.Add(listViewItem);
@@ -23,7 +31,7 @@ namespace DeliveryApp.Presentation
 
         private void btnApplyDeliveriesSearch_Click(object sender, System.EventArgs e)
         {
-            // Filter deliveries
+            LoadDeliveriesData();
         }
     }
 }

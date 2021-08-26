@@ -1,6 +1,5 @@
 ﻿using System.Windows.Forms;
 
-
 namespace DeliveryApp.Presentation
 {
     public partial class OrdersForm : Form
