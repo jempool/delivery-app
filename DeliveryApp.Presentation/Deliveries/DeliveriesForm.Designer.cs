@@ -1,5 +1,4 @@
-﻿
-namespace DeliveryApp.Presentation
+﻿namespace DeliveryApp.Presentation
 {
     partial class DeliveriesForm
     {
@@ -67,7 +66,7 @@ namespace DeliveryApp.Presentation
             this.btnApplyDeliveriesSearch.TabIndex = 2;
             this.btnApplyDeliveriesSearch.Text = "Apply";
             this.btnApplyDeliveriesSearch.UseVisualStyleBackColor = true;
-            this.btnApplyDeliveriesSearch.Click += new System.EventHandler(this.btnApplyDeliveriesSearch_Click);
+            this.btnApplyDeliveriesSearch.Click += new System.EventHandler(this.BtnApplyDeliveriesSearch_Click);
             // 
             // lstVwDeliveriesList
             // 

@@ -30,6 +30,7 @@ namespace DeliveryApp.Presentation
         private void InitializeComponent()
         {
             this.grpBxInvoices = new System.Windows.Forms.GroupBox();
+            this.lblInvoiceNumber = new System.Windows.Forms.Label();
             this.lblInvoiceNumberTitle = new System.Windows.Forms.Label();
             this.lblInvoiceDate = new System.Windows.Forms.Label();
             this.lblDateTitle = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@ namespace DeliveryApp.Presentation
             this.txtBxCustomerFono = new System.Windows.Forms.TextBox();
             this.lblInvoiceName = new System.Windows.Forms.Label();
             this.txtBxCustomerName = new System.Windows.Forms.TextBox();
-            this.lblInvoiceNumber = new System.Windows.Forms.Label();
             this.grpBxInvoices.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,15 @@ namespace DeliveryApp.Presentation
             this.grpBxInvoices.TabIndex = 1;
             this.grpBxInvoices.TabStop = false;
             this.grpBxInvoices.Text = "Invoice";
+            // 
+            // lblInvoiceNumber
+            // 
+            this.lblInvoiceNumber.AutoSize = true;
+            this.lblInvoiceNumber.Location = new System.Drawing.Point(301, 63);
+            this.lblInvoiceNumber.Name = "lblInvoiceNumber";
+            this.lblInvoiceNumber.Size = new System.Drawing.Size(43, 15);
+            this.lblInvoiceNumber.TabIndex = 27;
+            this.lblInvoiceNumber.Text = "007373";
             // 
             // lblInvoiceNumberTitle
             // 
@@ -186,6 +195,7 @@ namespace DeliveryApp.Presentation
             this.btnCloseInvoice.TabIndex = 8;
             this.btnCloseInvoice.Text = "Close";
             this.btnCloseInvoice.UseVisualStyleBackColor = true;
+            this.btnCloseInvoice.Click += new System.EventHandler(this.BtnCloseInvoice_Click);
             // 
             // btnPrintInvoice
             // 
@@ -229,15 +239,6 @@ namespace DeliveryApp.Presentation
             this.txtBxCustomerName.Name = "txtBxCustomerName";
             this.txtBxCustomerName.Size = new System.Drawing.Size(260, 23);
             this.txtBxCustomerName.TabIndex = 1;
-            // 
-            // lblInvoiceNumber
-            // 
-            this.lblInvoiceNumber.AutoSize = true;
-            this.lblInvoiceNumber.Location = new System.Drawing.Point(301, 63);
-            this.lblInvoiceNumber.Name = "lblInvoiceNumber";
-            this.lblInvoiceNumber.Size = new System.Drawing.Size(43, 15);
-            this.lblInvoiceNumber.TabIndex = 27;
-            this.lblInvoiceNumber.Text = "007373";
             // 
             // InvoicesForm
             // 

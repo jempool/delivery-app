@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using DeliveryApp.Data.Models;
 using DeliveryApp.Logic;
@@ -15,14 +16,15 @@ namespace DeliveryApp.Presentation
 
         private void LoadCustomersData(){
             this.lstVwCustomersList.Items.Clear();
-            foreach (Customer customer in CustomersLogic.GetAll())
+            List<Customer> allCustomers = CustomersLogic.GetAll();
+            foreach (Customer customer in allCustomers)
             {
                 var listViewItem = new ListViewItem(customer.ToArrString());
                 this.lstVwCustomersList.Items.Add(listViewItem);
             }
         }
 
-        private void btnCreateCustomer_Click(object sender, System.EventArgs e)
+        private void BtnCreateCustomer_Click(object sender, System.EventArgs e)
         {
             string customerName = txtBxCustomerName.Text;
             string customerFono = txtBxCustomerFono.Text;
@@ -36,7 +38,7 @@ namespace DeliveryApp.Presentation
             txtBxCustomerAddress.Text = string.Empty;
         }
 
-        private void btnCancelCreateCustomer_Click(object sender, EventArgs e)
+        private void BtnCancelCreateCustomer_Click(object sender, EventArgs e)
         {
             this.Close();
         }

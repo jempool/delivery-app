@@ -1,4 +1,7 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
+using DeliveryApp.Data.Models;
+using DeliveryApp.Logic;
 
 namespace DeliveryApp.Presentation
 {
@@ -7,32 +10,43 @@ namespace DeliveryApp.Presentation
         public OrdersForm()
         {
             InitializeComponent();
+            LoadProductsData();
         }
 
-        private void btnAddCustomer_Click(object sender, System.EventArgs e)
+        private void LoadProductsData(){
+            List<Product> allProducts = ProductsLogic.GetAll();
+            this.cmbBxListProducts.Text = allProducts[0].Name;
+            foreach (Product product in allProducts)
+            {
+                this.cmbBxListProducts.Items.Add(product.Name);
+            }
+        }
+
+        private void BtnAddCustomer_Click(object sender, System.EventArgs e)
         {            
             CustomersForm customersForm = new();
             customersForm.ShowDialog();
         }
 
-        private void btnAddProduct_Click(object sender, System.EventArgs e)
+        private void BtnAddProduct_Click(object sender, System.EventArgs e)
         {
             // add product
         }
 
-        private void txtBxAddDetails_TextChanged(object sender, System.EventArgs e)
+        private void TxtBxAddDetails_TextChanged(object sender, System.EventArgs e)
         {
             // add details
         }
 
-        private void btnCreateOrder_Click(object sender, System.EventArgs e)
+        private void BtnCreateOrder_Click(object sender, System.EventArgs e)
         {
-            // create order
+            InvoicesForm invoicesForm = new();
+            invoicesForm.ShowDialog();
         }
 
-        private void btnCancelOrder_Click(object sender, System.EventArgs e)
+        private void BtnCancelOrder_Click(object sender, System.EventArgs e)
         {
-            // cancel order
+            this.Close();
         }
     }
 }

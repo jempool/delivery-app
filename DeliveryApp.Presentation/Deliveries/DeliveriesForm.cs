@@ -29,7 +29,7 @@ namespace DeliveryApp.Presentation
             }
         }
 
-        private void btnApplyDeliveriesSearch_Click(object sender, System.EventArgs e)
+        private void BtnApplyDeliveriesSearch_Click(object sender, System.EventArgs e)
         {
             LoadDeliveriesData();
         }

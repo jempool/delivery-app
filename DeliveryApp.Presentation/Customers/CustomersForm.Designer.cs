@@ -99,7 +99,7 @@
             this.btnCancelCreateCustomer.TabIndex = 8;
             this.btnCancelCreateCustomer.Text = "Cancel";
             this.btnCancelCreateCustomer.UseVisualStyleBackColor = true;
-            this.btnCancelCreateCustomer.Click += new System.EventHandler(this.btnCancelCreateCustomer_Click);
+            this.btnCancelCreateCustomer.Click += new System.EventHandler(this.BtnCancelCreateCustomer_Click);
             // 
             // btnCreateCustomer
             // 
@@ -109,7 +109,7 @@
             this.btnCreateCustomer.TabIndex = 7;
             this.btnCreateCustomer.Text = "Create";
             this.btnCreateCustomer.UseVisualStyleBackColor = true;
-            this.btnCreateCustomer.Click += new System.EventHandler(this.btnCreateCustomer_Click);
+            this.btnCreateCustomer.Click += new System.EventHandler(this.BtnCreateCustomer_Click);
             // 
             // lblCustomerFono
             // 

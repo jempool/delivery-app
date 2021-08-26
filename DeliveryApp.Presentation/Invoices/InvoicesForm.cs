@@ -8,5 +8,10 @@ namespace DeliveryApp.Presentation
         {
             InitializeComponent();
         }
+
+        private void BtnCloseInvoice_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System.Windows.Forms;
-using DeliveryApp.Logic;
 
 namespace DeliveryApp.Presentation
 {
@@ -114,7 +113,7 @@ namespace DeliveryApp.Presentation
             this.btnCancelOrder.TabIndex = 18;
             this.btnCancelOrder.Text = "Cancel";
             this.btnCancelOrder.UseVisualStyleBackColor = true;
-            this.btnCancelOrder.Click += new System.EventHandler(this.btnCancelOrder_Click);
+            this.btnCancelOrder.Click += new System.EventHandler(this.BtnCancelOrder_Click);
             // 
             // btnCreateOrder
             // 
@@ -124,7 +123,7 @@ namespace DeliveryApp.Presentation
             this.btnCreateOrder.TabIndex = 17;
             this.btnCreateOrder.Text = "Create";
             this.btnCreateOrder.UseVisualStyleBackColor = true;
-            this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
+            this.btnCreateOrder.Click += new System.EventHandler(this.BtnCreateOrder_Click);
             // 
             // lblOrderTotal
             // 
@@ -171,7 +170,7 @@ namespace DeliveryApp.Presentation
             this.txtBxAddDetails.Name = "txtBxAddDetails";
             this.txtBxAddDetails.Size = new System.Drawing.Size(294, 52);
             this.txtBxAddDetails.TabIndex = 13;
-            this.txtBxAddDetails.TextChanged += new System.EventHandler(this.txtBxAddDetails_TextChanged);
+            this.txtBxAddDetails.TextChanged += new System.EventHandler(this.TxtBxAddDetails_TextChanged);
             // 
             // lblOrderDetails
             // 
@@ -191,7 +190,7 @@ namespace DeliveryApp.Presentation
             this.btnAddProduct.TabIndex = 11;
             this.btnAddProduct.Text = "Add Product";
             this.btnAddProduct.UseVisualStyleBackColor = true;
-            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
+            this.btnAddProduct.Click += new System.EventHandler(this.BtnAddProduct_Click);
             // 
             // dtTmPckrDueTime
             // 
@@ -247,15 +246,11 @@ namespace DeliveryApp.Presentation
             // cmbBxListProducts
             // 
             this.cmbBxListProducts.FormattingEnabled = true;
-            this.cmbBxListProducts.Items.AddRange(new object[] {
-            "Product1",
-            "Product2",
-            "Product3"});
             this.cmbBxListProducts.Location = new System.Drawing.Point(19, 215);
             this.cmbBxListProducts.Name = "cmbBxListProducts";
             this.cmbBxListProducts.Size = new System.Drawing.Size(143, 23);
             this.cmbBxListProducts.TabIndex = 6;
-            this.cmbBxListProducts.Text = "Product1";
+            this.cmbBxListProducts.Text = "";
             // 
             // btnEditCustomer
             // 
@@ -283,7 +278,7 @@ namespace DeliveryApp.Presentation
             this.btnAddCustomer.TabIndex = 3;
             this.btnAddCustomer.Text = "Add Customer";
             this.btnAddCustomer.UseVisualStyleBackColor = true;
-            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            this.btnAddCustomer.Click += new System.EventHandler(this.BtnAddCustomer_Click);
             // 
             // txtBxSearchCustomer
             // 
