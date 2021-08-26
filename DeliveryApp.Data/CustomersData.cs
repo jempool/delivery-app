@@ -8,7 +8,7 @@ namespace DeliveryApp.Data
 {
     public class CustomersData
     {
-        public static void Create(string customerName, string customerFono, string customerAddress )
+        public static void Create(string customerName, string customerFono, string customerAddress)
         {
             string query = "INSERT INTO Customers (Name, PhoneNumber, Address)"
                            + $"VALUES ('{customerName}', {customerFono}, '{customerAddress}')";
@@ -18,6 +18,7 @@ namespace DeliveryApp.Data
 
         public static void Update(int Id, string customerName, string customerFono, string customerAddress)
         {
+            // TODO: Implement this method
             Console.WriteLine($"Update Customer: {Id}, {customerName}, {customerFono}, {customerAddress}\n");
         }
 
@@ -29,10 +30,10 @@ namespace DeliveryApp.Data
             List<Customer> customertList = (from DataRow dr in dataTable.Rows  
             select new Customer()  
             {  
-                Id = Convert .ToInt32 (dr["ID"]),  
-                Name = dr["Name"].ToString(),  
-                PhoneNumber = (long)dr["PhoneNumber"],  
-                Address = dr["Address"].ToString()
+                Id = Convert.ToInt32(dr["ID"]),
+                Name = dr["Name"].ToString(),
+                PhoneNumber = Convert.ToInt32(dr["PhoneNumber"]),
+                Address = dr["Address"].ToString(),
             }).ToList(); 
 
             return customertList;

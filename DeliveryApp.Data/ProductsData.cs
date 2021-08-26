@@ -16,10 +16,9 @@ namespace DeliveryApp.Data
             List<Product> ProductList = (from DataRow dr in dataTable.Rows  
             select new Product()  
             {  
-                Id = Convert .ToInt32 (dr["ID"]),  
+                Id = Convert.ToInt32(dr["ID"]),  
                 Name = dr["Name"].ToString(),  
-                Price = (int)dr["Price"],
-                Details = dr["Details"].ToString()
+                Price = Convert.ToInt32(dr["Price"]),                
             }).ToList(); 
 
             return ProductList;

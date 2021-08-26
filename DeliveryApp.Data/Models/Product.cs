@@ -6,14 +6,20 @@ namespace DeliveryApp.Data.Models
         public string Name { get; set; }
         public int Price { get; set; }
         public string Details { get; set; }
+        public int Quantity  { get; set; }
         public string[] ToArrString()
         {
             return new string[]
             {
-                Name,
+                Name + Details,
+                Quantity.ToString(),
                 Price.ToString(),
-                Details,
             };
+        }
+
+        public Product ShallowCopy()  
+        {  
+            return (Product)this.MemberwiseClone();  
         }
     }    
 }

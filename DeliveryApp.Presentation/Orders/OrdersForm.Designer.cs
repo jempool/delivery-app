@@ -104,6 +104,7 @@ namespace DeliveryApp.Presentation
             this.txtBxOrderTotal.ReadOnly = true;
             this.txtBxOrderTotal.Size = new System.Drawing.Size(100, 23);
             this.txtBxOrderTotal.TabIndex = 20;
+            this.txtBxOrderTotal.Text = "0";
             // 
             // btnCancelOrder
             // 
@@ -170,7 +171,6 @@ namespace DeliveryApp.Presentation
             this.txtBxAddDetails.Name = "txtBxAddDetails";
             this.txtBxAddDetails.Size = new System.Drawing.Size(294, 52);
             this.txtBxAddDetails.TabIndex = 13;
-            this.txtBxAddDetails.TextChanged += new System.EventHandler(this.TxtBxAddDetails_TextChanged);
             // 
             // lblOrderDetails
             // 
@@ -250,7 +250,6 @@ namespace DeliveryApp.Presentation
             this.cmbBxListProducts.Name = "cmbBxListProducts";
             this.cmbBxListProducts.Size = new System.Drawing.Size(143, 23);
             this.cmbBxListProducts.TabIndex = 6;
-            this.cmbBxListProducts.Text = "";
             // 
             // btnEditCustomer
             // 

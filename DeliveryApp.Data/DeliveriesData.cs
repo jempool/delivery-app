@@ -47,8 +47,8 @@ namespace DeliveryApp.Data
             List<Delivery> deliveryList = (from DataRow dr in dataTable.Rows  
             select new Delivery()  
             {  
-                Id = Convert .ToInt32 (dr["ID"]),
-                OrderNumber = (long)dr["OrderNumber"],
+                Id = Convert.ToInt32(dr["ID"]),
+                OrderNumber = dr["OrderNumber"].ToString(),
                 DueTime = DateTime.Parse(dr["DueTime"].ToString()),
                 CustomerName = dr["Name"].ToString(),
                 Status = dr["Status"].ToString()
