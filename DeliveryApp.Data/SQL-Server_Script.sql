@@ -59,7 +59,7 @@ CREATE TABLE Invoices (
 
 CREATE TABLE Deliveries (
 	ID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-	Status BIT NOT NULL,
+	Status VARCHAR(100) NOT NULL,
     OrderId int FOREIGN KEY REFERENCES Orders(ID),
 )
 GO
@@ -83,6 +83,20 @@ INSERT INTO CategoriesProducts (CategoryID, ProductID) VALUES (2, 2)
 INSERT INTO CategoriesProducts (CategoryID, ProductID) VALUES (1, 3)
 INSERT INTO CategoriesProducts (CategoryID, ProductID) VALUES (1, 4)
 INSERT INTO CategoriesProducts (CategoryID, ProductID) VALUES (3, 5)
+
+INSERT INTO Customers (Name, PhoneNumber, Address) VALUES ('Jhon Doe', 555678, 'Avenue 123')
+INSERT INTO Customers (Name, PhoneNumber, Address) VALUES ('Von Stamp', 789670, 'Route 111' )
+INSERT INTO Customers (Name, PhoneNumber, Address) VALUES ('Herbert Barrett', 555678, 'Street 677')
+INSERT INTO Customers (Name, PhoneNumber, Address) VALUES ('Claudia Hyatt', 555678, 'St. Louis 12w')
+INSERT INTO Customers (Name, PhoneNumber, Address) VALUES ('Ann Labrecque', 555678, 'Bvd. 333')
+
+INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES (12, '20210918 10:34:09 AM', 500, 1)
+INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES (13, '20210918 08:00:00 AM', 600, 2)
+INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES (14, '20210825 12:30:00 PM', 440, 3)
+
+INSERT INTO Deliveries (Status, OrderId) VALUES ('Pending', 1)
+INSERT INTO Deliveries (Status, OrderId) VALUES ('Delivered', 2)
+INSERT INTO Deliveries (Status, OrderId) VALUES ('Shipping', 3)
 GO
 
 SELECT * FROM Customers

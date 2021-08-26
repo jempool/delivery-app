@@ -10,10 +10,10 @@ namespace DeliveryApp.Presentation
         public CustomersForm()
         {
             InitializeComponent();
-            LoadCustomerData();
+            LoadCustomersData();
         }
 
-        private void LoadCustomerData(){
+        private void LoadCustomersData(){
             this.lstVwCustomersList.Items.Clear();
             foreach (Customer customer in CustomersLogic.GetAll())
             {
@@ -29,7 +29,7 @@ namespace DeliveryApp.Presentation
             string customerAddress = txtBxCustomerAddress.Text;
             
             CustomersLogic.Create(customerName, customerFono, customerAddress);
-            LoadCustomerData();
+            LoadCustomersData();
 
             txtBxCustomerName.Text = string.Empty;
             txtBxCustomerFono.Text = string.Empty;
