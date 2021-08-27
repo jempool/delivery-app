@@ -14,9 +14,11 @@ namespace DeliveryApp.Presentation
             LoadCustomersData();
         }
 
+        private List<Customer> allCustomers;
+
         private void LoadCustomersData(){
             this.lstVwCustomersList.Items.Clear();
-            List<Customer> allCustomers = CustomersLogic.GetAll();
+            allCustomers = CustomersLogic.GetAll();
             foreach (Customer customer in allCustomers)
             {
                 var listViewItem = new ListViewItem(customer.ToArrString());
@@ -45,6 +47,17 @@ namespace DeliveryApp.Presentation
             txtBxCustomerName.Text = string.Empty;
             txtBxCustomerFono.Text = string.Empty;
             txtBxCustomerAddress.Text = string.Empty;
+        }
+
+        private void LstVwCustomersList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstVwCustomersList.SelectedIndices.Count > 0)
+            {
+                int selectedIndex = lstVwCustomersList.SelectedIndices[0];
+                Customer customer = allCustomers[selectedIndex];
+                // TODO: Implement close and send back the the selected Customer
+                Console.WriteLine("name: " + customer.Name);
+            }
         }
     }
 }

@@ -70,11 +70,13 @@
             this.columnHeaderAddress});
             this.lstVwCustomersList.HideSelection = false;
             this.lstVwCustomersList.Location = new System.Drawing.Point(21, 274);
+            this.lstVwCustomersList.MultiSelect = false;
             this.lstVwCustomersList.Name = "lstVwCustomersList";
             this.lstVwCustomersList.Size = new System.Drawing.Size(339, 216);
             this.lstVwCustomersList.TabIndex = 9;
             this.lstVwCustomersList.UseCompatibleStateImageBehavior = false;
             this.lstVwCustomersList.View = System.Windows.Forms.View.Details;
+            this.lstVwCustomersList.SelectedIndexChanged += new System.EventHandler(this.LstVwCustomersList_SelectedIndexChanged);
             // 
             // columnHeaderName
             // 

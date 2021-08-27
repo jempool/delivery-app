@@ -95,6 +95,7 @@ namespace DeliveryApp.Presentation
             this.btnEditCustomer.TabIndex = 5;
             this.btnEditCustomer.Text = "Edit";
             this.btnEditCustomer.UseVisualStyleBackColor = true;
+            this.btnEditCustomer.Click += new System.EventHandler(this.BtnEditCustomer_Click);
             // 
             // lblSearchResult
             // 

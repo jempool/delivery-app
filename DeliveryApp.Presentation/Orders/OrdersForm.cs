@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 using DeliveryApp.Data.Models;
 using DeliveryApp.Logic;
@@ -56,7 +55,14 @@ namespace DeliveryApp.Presentation
         }
 
         private void BtnAddCustomer_Click(object sender, System.EventArgs e)
-        {            
+        {
+            CustomersForm customersForm = new();
+            customersForm.ShowDialog();
+        }
+
+         private void BtnEditCustomer_Click(object sender, EventArgs e)
+        {
+            // TODO: implement to pass the Customer to be edited
             CustomersForm customersForm = new();
             customersForm.ShowDialog();
         }
