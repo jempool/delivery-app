@@ -1,3 +1,5 @@
+using System;
+
 namespace DeliveryApp.Data.Models
 {
     public class Product
@@ -11,7 +13,7 @@ namespace DeliveryApp.Data.Models
         {
             return new string[]
             {
-                Name + Details,
+                Name + (String.IsNullOrEmpty(Details) ? "" : $" ({Details})"),
                 Quantity.ToString(),
                 Price.ToString(),
             };
@@ -21,7 +23,7 @@ namespace DeliveryApp.Data.Models
         {
             return new string[]
             {
-                Name + Details,
+                Name + (String.IsNullOrEmpty(Details) ? "" : $" ({Details})"),
                 Quantity.ToString(),
                 Price.ToString(),
                 (Quantity * Price).ToString(),
