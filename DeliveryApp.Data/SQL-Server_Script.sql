@@ -89,6 +89,7 @@ INSERT INTO Customers (Name, PhoneNumber, Address) VALUES ('Von Stamp', 789670, 
 INSERT INTO Customers (Name, PhoneNumber, Address) VALUES ('Herbert Barrett', 555678, 'Street 677')
 INSERT INTO Customers (Name, PhoneNumber, Address) VALUES ('Claudia Hyatt', 555678, 'St. Louis 12w')
 INSERT INTO Customers (Name, PhoneNumber, Address) VALUES ('Ann Labrecque', 555678, 'Bvd. 333')
+INSERT INTO Customers (Name, PhoneNumber, Address) VALUES ('Jhon Smith', 987654, 'st. Bte 44')
 
 INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('554', '20210829 10:34:09 AM', 500, 1)
 INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('325', '20210827 08:00:00 AM', 600, 2)

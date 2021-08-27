@@ -31,6 +31,9 @@ namespace DeliveryApp.Presentation
         private void InitializeComponent()
         {
             this.grpBxOrders = new System.Windows.Forms.GroupBox();
+            this.btnEditCustomer = new System.Windows.Forms.Button();
+            this.lblSearchResult = new System.Windows.Forms.Label();
+            this.cmbBxSearchCustomer = new System.Windows.Forms.ComboBox();
             this.lblOrderNumber = new System.Windows.Forms.Label();
             this.txtBxOrderTotal = new System.Windows.Forms.TextBox();
             this.btnCancelOrder = new System.Windows.Forms.Button();
@@ -48,10 +51,7 @@ namespace DeliveryApp.Presentation
             this.nmrcUpDwnQtyProduct = new System.Windows.Forms.NumericUpDown();
             this.lblOrderQtyProduct = new System.Windows.Forms.Label();
             this.cmbBxListProducts = new System.Windows.Forms.ComboBox();
-            this.btnEditCustomer = new System.Windows.Forms.Button();
-            this.lstVwSearchResult = new System.Windows.Forms.ListView();
             this.btnAddCustomer = new System.Windows.Forms.Button();
-            this.txtBxSearchCustomer = new System.Windows.Forms.TextBox();
             this.lblOrderTitleRight = new System.Windows.Forms.Label();
             this.lblOrderTitleLeft = new System.Windows.Forms.Label();
             this.grpBxOrders.SuspendLayout();
@@ -60,6 +60,9 @@ namespace DeliveryApp.Presentation
             // 
             // grpBxOrders
             // 
+            this.grpBxOrders.Controls.Add(this.btnEditCustomer);
+            this.grpBxOrders.Controls.Add(this.lblSearchResult);
+            this.grpBxOrders.Controls.Add(this.cmbBxSearchCustomer);
             this.grpBxOrders.Controls.Add(this.lblOrderNumber);
             this.grpBxOrders.Controls.Add(this.txtBxOrderTotal);
             this.grpBxOrders.Controls.Add(this.btnCancelOrder);
@@ -74,10 +77,7 @@ namespace DeliveryApp.Presentation
             this.grpBxOrders.Controls.Add(this.nmrcUpDwnQtyProduct);
             this.grpBxOrders.Controls.Add(this.lblOrderQtyProduct);
             this.grpBxOrders.Controls.Add(this.cmbBxListProducts);
-            this.grpBxOrders.Controls.Add(this.btnEditCustomer);
-            this.grpBxOrders.Controls.Add(this.lstVwSearchResult);
             this.grpBxOrders.Controls.Add(this.btnAddCustomer);
-            this.grpBxOrders.Controls.Add(this.txtBxSearchCustomer);
             this.grpBxOrders.Controls.Add(this.lblOrderTitleRight);
             this.grpBxOrders.Controls.Add(this.lblOrderTitleLeft);
             this.grpBxOrders.Location = new System.Drawing.Point(13, 13);
@@ -86,6 +86,36 @@ namespace DeliveryApp.Presentation
             this.grpBxOrders.TabIndex = 0;
             this.grpBxOrders.TabStop = false;
             this.grpBxOrders.Text = " Orders ";
+            // 
+            // btnEditCustomer
+            // 
+            this.btnEditCustomer.Location = new System.Drawing.Point(306, 103);
+            this.btnEditCustomer.Name = "btnEditCustomer";
+            this.btnEditCustomer.Size = new System.Drawing.Size(50, 23);
+            this.btnEditCustomer.TabIndex = 5;
+            this.btnEditCustomer.Text = "Edit";
+            this.btnEditCustomer.UseVisualStyleBackColor = true;
+            // 
+            // lblSearchResult
+            // 
+            this.lblSearchResult.BackColor = System.Drawing.Color.White;
+            this.lblSearchResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSearchResult.Location = new System.Drawing.Point(19, 95);
+            this.lblSearchResult.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.lblSearchResult.Name = "lblSearchResult";
+            this.lblSearchResult.Size = new System.Drawing.Size(344, 62);
+            this.lblSearchResult.TabIndex = 23;
+            // 
+            // cmbBxSearchCustomer
+            // 
+            this.cmbBxSearchCustomer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbBxSearchCustomer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cmbBxSearchCustomer.FormattingEnabled = true;
+            this.cmbBxSearchCustomer.Location = new System.Drawing.Point(19, 65);
+            this.cmbBxSearchCustomer.Name = "cmbBxSearchCustomer";
+            this.cmbBxSearchCustomer.Size = new System.Drawing.Size(232, 23);
+            this.cmbBxSearchCustomer.TabIndex = 22;
+            this.cmbBxSearchCustomer.SelectedIndexChanged += new System.EventHandler(this.CmbBxSearchCustomer_SelectedIndexChanged);
             // 
             // lblOrderNumber
             // 
@@ -251,24 +281,6 @@ namespace DeliveryApp.Presentation
             this.cmbBxListProducts.Size = new System.Drawing.Size(143, 23);
             this.cmbBxListProducts.TabIndex = 6;
             // 
-            // btnEditCustomer
-            // 
-            this.btnEditCustomer.Location = new System.Drawing.Point(306, 103);
-            this.btnEditCustomer.Name = "btnEditCustomer";
-            this.btnEditCustomer.Size = new System.Drawing.Size(50, 23);
-            this.btnEditCustomer.TabIndex = 5;
-            this.btnEditCustomer.Text = "Edit";
-            this.btnEditCustomer.UseVisualStyleBackColor = true;
-            // 
-            // lstVwSearchResult
-            // 
-            this.lstVwSearchResult.HideSelection = false;
-            this.lstVwSearchResult.Location = new System.Drawing.Point(19, 94);
-            this.lstVwSearchResult.Name = "lstVwSearchResult";
-            this.lstVwSearchResult.Size = new System.Drawing.Size(348, 78);
-            this.lstVwSearchResult.TabIndex = 4;
-            this.lstVwSearchResult.UseCompatibleStateImageBehavior = false;
-            // 
             // btnAddCustomer
             // 
             this.btnAddCustomer.Location = new System.Drawing.Point(258, 65);
@@ -278,13 +290,6 @@ namespace DeliveryApp.Presentation
             this.btnAddCustomer.Text = "Add Customer";
             this.btnAddCustomer.UseVisualStyleBackColor = true;
             this.btnAddCustomer.Click += new System.EventHandler(this.BtnAddCustomer_Click);
-            // 
-            // txtBxSearchCustomer
-            // 
-            this.txtBxSearchCustomer.Location = new System.Drawing.Point(19, 65);
-            this.txtBxSearchCustomer.Name = "txtBxSearchCustomer";
-            this.txtBxSearchCustomer.Size = new System.Drawing.Size(233, 23);
-            this.txtBxSearchCustomer.TabIndex = 2;
             // 
             // lblOrderTitleRight
             // 
@@ -326,8 +331,6 @@ namespace DeliveryApp.Presentation
         private System.Windows.Forms.Label lblOrderTitleLeft;
         private System.Windows.Forms.Label lblOrderTitleRight;
         private System.Windows.Forms.Button btnAddCustomer;
-        private System.Windows.Forms.TextBox txtBxSearchCustomer;
-        private System.Windows.Forms.ListView lstVwSearchResult;
         private System.Windows.Forms.Button btnEditCustomer;
         private System.Windows.Forms.ComboBox cmbBxListProducts;
         private System.Windows.Forms.Label lblOrderQtyProduct;
@@ -346,6 +349,8 @@ namespace DeliveryApp.Presentation
         private Button btnCreateOrder;
         private TextBox txtBxOrderTotal;
         private Label lblOrderNumber;
+        private ComboBox cmbBxSearchCustomer;
+        private Label lblSearchResult;
     }
 }
 

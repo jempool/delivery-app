@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using DeliveryApp.Data.Models;
 using DeliveryApp.Logic;
@@ -11,14 +12,29 @@ namespace DeliveryApp.Presentation
         public OrdersForm()
         {
             InitializeComponent();
+            LoadCustomersData();
             LoadProductsData();
             
+            // TODO: read order number from the database
             var random = new Random();
             this.lblOrderNumber.Text = random.Next(100, 999).ToString();
         }
 
         private List<Product> allProducts = new();
         private readonly List<Product> orderProductList = new();
+        private List<Customer> allCustomers = new();
+        private Customer currentCustomer;
+
+        private void LoadCustomersData(){
+            allCustomers = CustomersLogic.GetAll();
+            var data = new AutoCompleteStringCollection();
+            foreach (Customer customer in allCustomers)
+            {
+                this.cmbBxSearchCustomer.Items.Add(customer.Name);
+                data.Add(customer.Name);
+            }
+            this.cmbBxSearchCustomer.AutoCompleteCustomSource = data;
+        }
 
         private void LoadProductsData(){
             allProducts = ProductsLogic.GetAll();
@@ -57,20 +73,19 @@ namespace DeliveryApp.Presentation
             
             var listViewItem = new ListViewItem(product.ToArrString());
             this.lstVwOrderProducts.Items.Add(listViewItem);
-            this.cmbBxListProducts.SelectedIndex = 0;
-            this.nmrcUpDwnQtyProduct.Value = 1;
-            this.txtBxAddDetails.Clear();
+            ClearLastSelectedProduct();
         }
 
         private void BtnCreateOrder_Click(object sender, System.EventArgs e)
         {
-            // TODO: clear all inputs
+            // TODO: No action if no customer selected or at least one prod. selected
             string orderNumber = this.lblOrderNumber.Text;
             DateTime dueTime = this.dtTmPckrDueTime.Value;
             int totalPrice = Convert.ToInt32(this.txtBxOrderTotal.Text.ToString());
-            int customerId = 1; // TODO: get Customer Id
+            int customerId = currentCustomer.Id;
             OrdersLogic.Create(orderNumber, dueTime, totalPrice, customerId, orderProductList);
 
+            ClearForm();
             InvoicesForm invoicesForm = new();
             invoicesForm.ShowDialog();
         }
@@ -78,6 +93,32 @@ namespace DeliveryApp.Presentation
         private void BtnCancelOrder_Click(object sender, System.EventArgs e)
         {
             this.Close();
+        }
+
+        private void CmbBxSearchCustomer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int indexCustomer = this.cmbBxSearchCustomer.SelectedIndex;
+            currentCustomer = allCustomers[indexCustomer];
+            string selectedCustomer = $"{currentCustomer.Name}\n{currentCustomer.PhoneNumber}\n{currentCustomer.Address}";
+            this.lblSearchResult.Text = selectedCustomer;
+        }
+
+        private void ClearLastSelectedProduct()
+        {
+            this.cmbBxListProducts.SelectedIndex = 0;
+            this.nmrcUpDwnQtyProduct.Value = 1;
+            this.txtBxAddDetails.Clear();
+        }
+
+        private void ClearForm()
+        {
+            this.cmbBxSearchCustomer.Items.Clear();
+            this.cmbBxSearchCustomer.ResetText();
+            this.lblSearchResult.Text = string.Empty;
+            this.dtTmPckrDueTime.Value = DateTime.Now;
+            ClearLastSelectedProduct();
+            this.lstVwOrderProducts.Items.Clear();
+            this.txtBxOrderTotal.Clear();
         }
     }
 }

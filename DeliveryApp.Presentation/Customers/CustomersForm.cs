@@ -32,15 +32,19 @@ namespace DeliveryApp.Presentation
             
             CustomersLogic.Create(customerName, customerFono, customerAddress);
             LoadCustomersData();
-
-            txtBxCustomerName.Text = string.Empty;
-            txtBxCustomerFono.Text = string.Empty;
-            txtBxCustomerAddress.Text = string.Empty;
+            ClearForm();
         }
-
+        
         private void BtnCancelCreateCustomer_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ClearForm()
+        {
+            txtBxCustomerName.Text = string.Empty;
+            txtBxCustomerFono.Text = string.Empty;
+            txtBxCustomerAddress.Text = string.Empty;
         }
     }
 }

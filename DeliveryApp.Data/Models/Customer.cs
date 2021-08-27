@@ -11,5 +11,10 @@ namespace DeliveryApp.Data.Models
         {
             return new string[]{ Name , PhoneNumber.ToString(), Address };
         }
+
+        public Customer ShallowCopy()  
+        {  
+            return (Customer)this.MemberwiseClone();  
+        }
     }
 }
