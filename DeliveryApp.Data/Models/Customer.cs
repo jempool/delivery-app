@@ -7,7 +7,7 @@ namespace DeliveryApp.Data.Models
         public int PhoneNumber { get; set; }
         public string Address { get; set; }
 
-        public string[] ToArrString()
+        public string[] CustomerFormat()
         {
             return new string[]{ Name , PhoneNumber.ToString(), Address };
         }

@@ -12,10 +12,6 @@ namespace DeliveryApp.Data
         {
         }
 
-        public static void Update()
-        {
-        }
-
         public static List<Delivery> GetAll()
         {
             string query = "SELECT Deliveries.ID, Orders.OrderNumber, Orders.DueTime, Customers.Name, Deliveries.Status"

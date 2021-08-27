@@ -1,5 +1,4 @@
-﻿
-namespace DeliveryApp.Presentation
+﻿namespace DeliveryApp.Presentation
 {
     partial class InvoicesForm
     {
@@ -30,12 +29,14 @@ namespace DeliveryApp.Presentation
         private void InitializeComponent()
         {
             this.grpBxInvoices = new System.Windows.Forms.GroupBox();
+            this.lblInvoiceTotal = new System.Windows.Forms.Label();
+            this.lblCustomerFono = new System.Windows.Forms.Label();
+            this.lblCustomerName = new System.Windows.Forms.Label();
             this.lblInvoiceNumber = new System.Windows.Forms.Label();
             this.lblInvoiceNumberTitle = new System.Windows.Forms.Label();
             this.lblInvoiceDate = new System.Windows.Forms.Label();
             this.lblDateTitle = new System.Windows.Forms.Label();
-            this.txtBxInvoiceTotal = new System.Windows.Forms.TextBox();
-            this.lblInvoiceTotal = new System.Windows.Forms.Label();
+            this.lblInvoiceTotalTitle = new System.Windows.Forms.Label();
             this.lstVwInvoiceProducts = new System.Windows.Forms.ListView();
             this.columnHeaderProducts = new System.Windows.Forms.ColumnHeader();
             this.columnHeaderQty = new System.Windows.Forms.ColumnHeader();
@@ -46,35 +47,60 @@ namespace DeliveryApp.Presentation
             this.btnCloseInvoice = new System.Windows.Forms.Button();
             this.btnPrintInvoice = new System.Windows.Forms.Button();
             this.lblInvoiceFono = new System.Windows.Forms.Label();
-            this.txtBxCustomerFono = new System.Windows.Forms.TextBox();
             this.lblInvoiceName = new System.Windows.Forms.Label();
-            this.txtBxCustomerName = new System.Windows.Forms.TextBox();
             this.grpBxInvoices.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpBxInvoices
             // 
+            this.grpBxInvoices.Controls.Add(this.lblInvoiceTotal);
+            this.grpBxInvoices.Controls.Add(this.lblCustomerFono);
+            this.grpBxInvoices.Controls.Add(this.lblCustomerName);
             this.grpBxInvoices.Controls.Add(this.lblInvoiceNumber);
             this.grpBxInvoices.Controls.Add(this.lblInvoiceNumberTitle);
             this.grpBxInvoices.Controls.Add(this.lblInvoiceDate);
             this.grpBxInvoices.Controls.Add(this.lblDateTitle);
-            this.grpBxInvoices.Controls.Add(this.txtBxInvoiceTotal);
-            this.grpBxInvoices.Controls.Add(this.lblInvoiceTotal);
+            this.grpBxInvoices.Controls.Add(this.lblInvoiceTotalTitle);
             this.grpBxInvoices.Controls.Add(this.lstVwInvoiceProducts);
             this.grpBxInvoices.Controls.Add(this.lblSubTitle);
             this.grpBxInvoices.Controls.Add(this.lblTitle);
             this.grpBxInvoices.Controls.Add(this.btnCloseInvoice);
             this.grpBxInvoices.Controls.Add(this.btnPrintInvoice);
             this.grpBxInvoices.Controls.Add(this.lblInvoiceFono);
-            this.grpBxInvoices.Controls.Add(this.txtBxCustomerFono);
             this.grpBxInvoices.Controls.Add(this.lblInvoiceName);
-            this.grpBxInvoices.Controls.Add(this.txtBxCustomerName);
             this.grpBxInvoices.Location = new System.Drawing.Point(12, 12);
             this.grpBxInvoices.Name = "grpBxInvoices";
             this.grpBxInvoices.Size = new System.Drawing.Size(384, 452);
             this.grpBxInvoices.TabIndex = 1;
             this.grpBxInvoices.TabStop = false;
             this.grpBxInvoices.Text = "Invoice";
+            // 
+            // lblInvoiceTotal
+            // 
+            this.lblInvoiceTotal.BackColor = System.Drawing.Color.White;
+            this.lblInvoiceTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblInvoiceTotal.Location = new System.Drawing.Point(313, 338);
+            this.lblInvoiceTotal.Name = "lblInvoiceTotal";
+            this.lblInvoiceTotal.Size = new System.Drawing.Size(58, 23);
+            this.lblInvoiceTotal.TabIndex = 30;
+            // 
+            // lblCustomerFono
+            // 
+            this.lblCustomerFono.BackColor = System.Drawing.Color.White;
+            this.lblCustomerFono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCustomerFono.Location = new System.Drawing.Point(85, 159);
+            this.lblCustomerFono.Name = "lblCustomerFono";
+            this.lblCustomerFono.Size = new System.Drawing.Size(260, 23);
+            this.lblCustomerFono.TabIndex = 29;
+            // 
+            // lblCustomerName
+            // 
+            this.lblCustomerName.BackColor = System.Drawing.Color.White;
+            this.lblCustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCustomerName.Location = new System.Drawing.Point(85, 123);
+            this.lblCustomerName.Name = "lblCustomerName";
+            this.lblCustomerName.Size = new System.Drawing.Size(260, 23);
+            this.lblCustomerName.TabIndex = 28;
             // 
             // lblInvoiceNumber
             // 
@@ -114,24 +140,15 @@ namespace DeliveryApp.Presentation
             this.lblDateTitle.TabIndex = 24;
             this.lblDateTitle.Text = "Day Month Year";
             // 
-            // txtBxInvoiceTotal
+            // lblInvoiceTotalTitle
             // 
-            this.txtBxInvoiceTotal.BackColor = System.Drawing.Color.White;
-            this.txtBxInvoiceTotal.Location = new System.Drawing.Point(271, 338);
-            this.txtBxInvoiceTotal.Name = "txtBxInvoiceTotal";
-            this.txtBxInvoiceTotal.ReadOnly = true;
-            this.txtBxInvoiceTotal.Size = new System.Drawing.Size(100, 23);
-            this.txtBxInvoiceTotal.TabIndex = 23;
-            // 
-            // lblInvoiceTotal
-            // 
-            this.lblInvoiceTotal.AutoSize = true;
-            this.lblInvoiceTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblInvoiceTotal.Location = new System.Drawing.Point(21, 346);
-            this.lblInvoiceTotal.Name = "lblInvoiceTotal";
-            this.lblInvoiceTotal.Size = new System.Drawing.Size(34, 15);
-            this.lblInvoiceTotal.TabIndex = 22;
-            this.lblInvoiceTotal.Text = "Total";
+            this.lblInvoiceTotalTitle.AutoSize = true;
+            this.lblInvoiceTotalTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblInvoiceTotalTitle.Location = new System.Drawing.Point(21, 346);
+            this.lblInvoiceTotalTitle.Name = "lblInvoiceTotalTitle";
+            this.lblInvoiceTotalTitle.Size = new System.Drawing.Size(34, 15);
+            this.lblInvoiceTotalTitle.TabIndex = 22;
+            this.lblInvoiceTotalTitle.Text = "Total";
             // 
             // lstVwInvoiceProducts
             // 
@@ -216,13 +233,6 @@ namespace DeliveryApp.Presentation
             this.lblInvoiceFono.TabIndex = 6;
             this.lblInvoiceFono.Text = "Fono:";
             // 
-            // txtBxCustomerFono
-            // 
-            this.txtBxCustomerFono.Location = new System.Drawing.Point(85, 159);
-            this.txtBxCustomerFono.Name = "txtBxCustomerFono";
-            this.txtBxCustomerFono.Size = new System.Drawing.Size(260, 23);
-            this.txtBxCustomerFono.TabIndex = 5;
-            // 
             // lblInvoiceName
             // 
             this.lblInvoiceName.AutoSize = true;
@@ -232,13 +242,6 @@ namespace DeliveryApp.Presentation
             this.lblInvoiceName.Size = new System.Drawing.Size(52, 15);
             this.lblInvoiceName.TabIndex = 2;
             this.lblInvoiceName.Text = "Mr/Mrs:";
-            // 
-            // txtBxCustomerName
-            // 
-            this.txtBxCustomerName.Location = new System.Drawing.Point(85, 119);
-            this.txtBxCustomerName.Name = "txtBxCustomerName";
-            this.txtBxCustomerName.Size = new System.Drawing.Size(260, 23);
-            this.txtBxCustomerName.TabIndex = 1;
             // 
             // InvoicesForm
             // 
@@ -259,13 +262,10 @@ namespace DeliveryApp.Presentation
         private System.Windows.Forms.Button btnCloseInvoice;
         private System.Windows.Forms.Button btnPrintInvoice;
         private System.Windows.Forms.Label lblInvoiceFono;
-        private System.Windows.Forms.TextBox txtBxCustomerFono;
         private System.Windows.Forms.Label lblInvoiceName;
-        private System.Windows.Forms.TextBox txtBxCustomerName;
         private System.Windows.Forms.Label lblSubTitle;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.TextBox txtBxInvoiceTotal;
-        private System.Windows.Forms.Label lblInvoiceTotal;
+        private System.Windows.Forms.Label lblInvoiceTotalTitle;
         private System.Windows.Forms.ListView lstVwInvoiceProducts;
         private System.Windows.Forms.ColumnHeader columnHeaderProducts;
         private System.Windows.Forms.ColumnHeader columnHeaderQty;
@@ -275,5 +275,8 @@ namespace DeliveryApp.Presentation
         private System.Windows.Forms.Label lblInvoiceDate;
         private System.Windows.Forms.Label lblDateTitle;
         private System.Windows.Forms.Label lblInvoiceNumber;
+        private System.Windows.Forms.Label lblCustomerName;
+        private System.Windows.Forms.Label lblCustomerFono;
+        private System.Windows.Forms.Label lblInvoiceTotal;
     }
 }

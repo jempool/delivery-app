@@ -8,24 +8,26 @@ namespace DeliveryApp.Data
 {
     public class OrdersData
     {
-        public static void Create(string orderNumber, DateTime dueTime, int totalPrice, int customerId, List<Product> productList)
+        public static int Create(string orderNumber, DateTime dueTime, int totalPrice, int customerId, List<Product> productList)
         {
             string sqlProductList = OrdersData.ProductListToSQLProductList(productList);
 
             string query = "DECLARE @OrderId INT;"
                             + " INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId)"
+                            + " OUTPUT Inserted.ID as InsertedOrderID"
                             + $" VALUES ({orderNumber}, '{dueTime:MM/dd/yyyy hh:mm:ss.fff}', {totalPrice}, {customerId})"
                             + " SET @OrderId = SCOPE_IDENTITY()"
                             + " INSERT INTO OrdersProducts (OrderId, ProductID, ProductQuantity, ProductDetails)"
                             + $" VALUES {sqlProductList}";
 
-            Connection.ExecuteSQLQuery(query);
-        }
-
-        public static void Update(int Id, string orderNumber, DateTime dueTime, int totalPrice, int customerId)
-        {
-            // TODO: Implement this method
-            Console.WriteLine($"Update Orders: {Id}, {orderNumber}, {dueTime}, {totalPrice}, {customerId}\n");
+            var dataTable = Connection.ExecuteSQLQuery(query);
+            var insertedOrderID = (from DataRow dr in dataTable.Rows  
+            select new
+            {  
+                Value = Convert.ToInt32(dr["InsertedOrderID"]),
+            }).First();
+            
+            return insertedOrderID.Value;
         }
 
         public static List<Order> GetAll()
@@ -41,7 +43,7 @@ namespace DeliveryApp.Data
                 DueTime = DateTime.Parse(dr["DueTime"].ToString()),
                 TotalPrice = Convert.ToInt32(dr["TotalPrice"]),
                 CustomerId = Convert.ToInt32(dr["CustomerId"]),
-            }).ToList(); 
+            }).ToList();
 
             return ordertList;
         }

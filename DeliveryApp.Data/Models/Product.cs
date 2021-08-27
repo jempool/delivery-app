@@ -7,13 +7,24 @@ namespace DeliveryApp.Data.Models
         public int Price { get; set; }
         public string Details { get; set; }
         public int Quantity  { get; set; }
-        public string[] ToArrString()
+        public string[] OrderFormat()
         {
             return new string[]
             {
                 Name + Details,
                 Quantity.ToString(),
                 Price.ToString(),
+            };
+        }
+
+        public string[] InvoiceFormat()
+        {
+            return new string[]
+            {
+                Name + Details,
+                Quantity.ToString(),
+                Price.ToString(),
+                (Quantity * Price).ToString(),
             };
         }
 

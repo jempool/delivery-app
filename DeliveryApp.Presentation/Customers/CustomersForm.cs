@@ -21,7 +21,7 @@ namespace DeliveryApp.Presentation
             allCustomers = CustomersLogic.GetAll();
             foreach (Customer customer in allCustomers)
             {
-                var listViewItem = new ListViewItem(customer.ToArrString());
+                var listViewItem = new ListViewItem(customer.CustomerFormat());
                 this.lstVwCustomersList.Items.Add(listViewItem);
             }
         }

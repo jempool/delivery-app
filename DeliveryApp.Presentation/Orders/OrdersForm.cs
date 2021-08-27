@@ -14,13 +14,13 @@ namespace DeliveryApp.Presentation
             LoadCustomersData();
             LoadProductsData();
             
-            // TODO: read order number from the database
+            // TODO: read order number from the database (current amount + 1)
             var random = new Random();
             this.lblOrderNumber.Text = random.Next(100, 999).ToString();
         }
 
         private List<Product> allProducts = new();
-        private readonly List<Product> orderProductList = new();
+        private List<Product> orderProductList = new();
         private List<Customer> allCustomers = new();
         private Customer currentCustomer;
 
@@ -77,7 +77,7 @@ namespace DeliveryApp.Presentation
             orderProductList.Add(product);
             UpdateTotalPrice();
             
-            var listViewItem = new ListViewItem(product.ToArrString());
+            var listViewItem = new ListViewItem(product.OrderFormat());
             this.lstVwOrderProducts.Items.Add(listViewItem);
             ClearLastSelectedProduct();
         }
@@ -89,11 +89,30 @@ namespace DeliveryApp.Presentation
             DateTime dueTime = this.dtTmPckrDueTime.Value;
             int totalPrice = Convert.ToInt32(this.txtBxOrderTotal.Text.ToString());
             int customerId = currentCustomer.Id;
-            OrdersLogic.Create(orderNumber, dueTime, totalPrice, customerId, orderProductList);
+            int insertedOrderID = OrdersLogic.Create(orderNumber, dueTime, totalPrice, customerId, orderProductList);
+            
+            // TODO: implement getNewInvoiceNumber
+            string invoiceNumber = "333";
+            DateTime expeditionDate = DateTime.Now;
+            InvoicesLogic.Create(invoiceNumber, expeditionDate, insertedOrderID);
 
             ClearForm();
-            InvoicesForm invoicesForm = new();
+
+            // TODO: pending OrderId
+            Order order = new(){
+                Id = 666,
+                OrderNumber = orderNumber,
+                DueTime = dueTime,
+                TotalPrice = totalPrice,
+                CustomerId = customerId,
+                Products = orderProductList,
+                };
+
+            InvoicesForm invoicesForm = new(order, currentCustomer);
             invoicesForm.ShowDialog();
+            
+            // TODO: Cleaning also the data...
+            orderProductList = new();
         }
 
         private void BtnCancelOrder_Click(object sender, System.EventArgs e)
