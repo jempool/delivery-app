@@ -95,6 +95,7 @@ namespace DeliveryApp.Presentation
             string invoiceNumber = "333";
             DateTime expeditionDate = DateTime.Now;
             InvoicesLogic.Create(invoiceNumber, expeditionDate, insertedOrderID);
+            DeliveriesLogic.Create("Pending", insertedOrderID);
 
             ClearForm();
 

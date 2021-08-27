@@ -8,8 +8,12 @@ namespace DeliveryApp.Data
 {
     public class DeliveriesData
     {
-        public static void Create()
+        public static void Create(string status, int orderId)
         {
+            string query = " INSERT INTO Deliveries (Status, OrderId)"
+                           + $" VALUES ('{status}', {orderId})";
+
+            Connection.ExecuteSQLQuery(query);
         }
 
         public static List<Delivery> GetAll()

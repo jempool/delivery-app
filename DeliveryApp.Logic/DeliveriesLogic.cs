@@ -7,12 +7,9 @@ namespace DeliveryApp.Logic
 {
     public class DeliveriesLogic
     {
-        public static void Create()
+        public static void Create(string status, int orderId)
         {
-        }
-
-        public static void Update()
-        {
+            DeliveriesData.Create(status, orderId);
         }
 
         public static List<Delivery> GetAll()
