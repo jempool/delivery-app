@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using DeliveryApp.Data.Models;
-using DeliveryApp.Logic;
+using DeliveryApp.Service;
 
 namespace DeliveryApp.Presentation
 {
@@ -27,7 +27,7 @@ namespace DeliveryApp.Presentation
         private AutoCompleteStringCollection data;
 
         private void LoadCustomersData(){            
-            allCustomers = CustomersLogic.GetAll();
+            allCustomers = CustomersService.GetAll();
             data = new AutoCompleteStringCollection();
             foreach (Customer customer in allCustomers)
             {
@@ -38,7 +38,7 @@ namespace DeliveryApp.Presentation
         }
 
         private void LoadProductsData(){
-            allProducts = ProductsLogic.GetAll();
+            allProducts = ProductsService.GetAll();
             foreach (Product product in allProducts)
             {
                 this.cmbBxListProducts.Items.Add(product.Name);
@@ -91,13 +91,13 @@ namespace DeliveryApp.Presentation
             DateTime dueTime = this.dtTmPckrDueTime.Value;
             int totalPrice = Convert.ToInt32(this.lblOrderTotal.Text.ToString());
             int customerId = currentCustomer.Id;
-            int insertedOrderID = OrdersLogic.Create(orderNumber, dueTime, totalPrice, customerId, orderProductList);
+            int insertedOrderID = OrdersService.Create(orderNumber, dueTime, totalPrice, customerId, orderProductList);
             
             // TODO: implement getNewInvoiceNumber
             string invoiceNumber = "333";
             DateTime expeditionDate = DateTime.Now;
-            InvoicesLogic.Create(invoiceNumber, expeditionDate, insertedOrderID);
-            DeliveriesLogic.Create("Pending", insertedOrderID);
+            InvoicesService.Create(invoiceNumber, expeditionDate, insertedOrderID);
+            DeliveriesService.Create("Pending", insertedOrderID);
 
             // TODO: pending OrderId
             Order order = new(){
@@ -130,7 +130,7 @@ namespace DeliveryApp.Presentation
                 return;         
             }
 
-            allCustomers = CustomersLogic.GetByNamePattern(text);
+            allCustomers = CustomersService.GetByNamePattern(text);
 
             if (allCustomers.Count == 0)
             {

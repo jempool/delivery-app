@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using DeliveryApp.Data.Models;
-using DeliveryApp.Logic;
+using DeliveryApp.Service;
 
 namespace DeliveryApp.Presentation
 {
@@ -18,7 +18,7 @@ namespace DeliveryApp.Presentation
 
         private void LoadCustomersData(){
             this.lstVwCustomersList.Items.Clear();
-            allCustomers = CustomersLogic.GetAll();
+            allCustomers = CustomersService.GetAll();
             foreach (Customer customer in allCustomers)
             {
                 var listViewItem = new ListViewItem(customer.CustomerFormat());
@@ -32,7 +32,7 @@ namespace DeliveryApp.Presentation
             string customerFono = txtBxCustomerFono.Text;
             string customerAddress = txtBxCustomerAddress.Text;
             
-            CustomersLogic.Create(customerName, customerFono, customerAddress);
+            CustomersService.Create(customerName, customerFono, customerAddress);
             LoadCustomersData();
             ClearForm();
         }
@@ -57,6 +57,7 @@ namespace DeliveryApp.Presentation
                 Customer customer = allCustomers[selectedIndex];
                 // TODO: Implement close and send back the the selected Customer
                 Console.WriteLine("name: " + customer.Name);
+                // CustomersService.Load
             }
         }
     }

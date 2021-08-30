@@ -1,11 +1,10 @@
 using System.Collections.Generic;
-using System.Data;
 using DeliveryApp.Data;
 using DeliveryApp.Data.Models;
 
-namespace DeliveryApp.Logic
+namespace DeliveryApp.Service
 {
-    public class CustomersLogic
+    public class CustomersService
     {
         public static void Create(string customerName, string customerFono, string customerAddress)
         {

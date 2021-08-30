@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using DeliveryApp.Data;
 using DeliveryApp.Data.Models;
 
-namespace DeliveryApp.Logic
+namespace DeliveryApp.Service
 {
-    public class DeliveriesLogic
+    public class DeliveriesService
     {
         public static void Create(string status, int orderId)
         {

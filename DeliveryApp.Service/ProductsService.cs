@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using DeliveryApp.Data;
 using DeliveryApp.Data.Models;
 
-namespace DeliveryApp.Logic
+namespace DeliveryApp.Service
 {
-    public class ProductsLogic
+    public class ProductsService
     {
         public static List<Product> GetAll()
         {

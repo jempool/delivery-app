@@ -1,9 +1,9 @@
 using System;
 using DeliveryApp.Data;
 
-namespace DeliveryApp.Logic
+namespace DeliveryApp.Service
 {
-    public class InvoicesLogic
+    public class InvoicesService
     {
         public static void Create(string invoiceNumber, DateTime expeditionDate, int orderId)
         {
