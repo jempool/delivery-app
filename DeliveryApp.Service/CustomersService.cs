@@ -6,24 +6,24 @@ namespace DeliveryApp.Service
 {
     public class CustomersService
     {
-        public static void Create(string customerName, string customerFono, string customerAddress)
+        public static void CreateCustomer(string customerName, string customerFono, string customerAddress)
         {
             CustomersData.Create(customerName, customerFono, customerAddress);
         }
 
-        public static void Update(string customerName, string customerFono, string customerAddress)
+        public static void UpdateCustomer(string customerName, string customerFono, string customerAddress)
         {
             // TODO: implement method
             int id = 0;
             CustomersData.Update(id, customerName, customerFono, customerAddress); 
         }
 
-        public static List<Customer> GetAll()
+        public static List<Customer> GetAllCustomers()
         {
             return CustomersData.GetAll();
         }
 
-        public static List<Customer> GetByNamePattern(string pattern)
+        public static List<Customer> GetCustomerByNamePattern(string pattern)
         {
             return CustomersData.GetByNamePattern(pattern);
         }

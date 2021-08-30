@@ -20,7 +20,7 @@ namespace DeliveryApp.Presentation
             DateTime from = this.dtTmPckrDeliveriesFrom.Value;
             DateTime to = this.dtTmPckrDeliveriesTo.Value;
 
-            List<Delivery> filteredDeliveries = DeliveriesService.FilterByDateRange(from, to);
+            List<Delivery> filteredDeliveries = DeliveriesService.FilterDeliveriesByDateRange(from, to);
 
             foreach (Delivery delivery in filteredDeliveries)
             {

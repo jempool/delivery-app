@@ -7,17 +7,17 @@ namespace DeliveryApp.Service
 {
     public class DeliveriesService
     {
-        public static void Create(string status, int orderId)
+        public static void CreateDelivery(string status, int orderId)
         {
             DeliveriesData.Create(status, orderId);
         }
 
-        public static List<Delivery> GetAll()
+        public static List<Delivery> GetAllDeliveries()
         {
             return DeliveriesData.GetAll();
         }
 
-        public static List<Delivery> FilterByDateRange(DateTime from, DateTime to)
+        public static List<Delivery> FilterDeliveriesByDateRange(DateTime from, DateTime to)
         {
             return DeliveriesData.FilterByDateRange(from, to);
         }

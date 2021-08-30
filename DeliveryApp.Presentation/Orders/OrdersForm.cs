@@ -27,7 +27,7 @@ namespace DeliveryApp.Presentation
         private AutoCompleteStringCollection data;
 
         private void LoadCustomersData(){            
-            allCustomers = CustomersService.GetAll();
+            allCustomers = CustomersService.GetAllCustomers();
             data = new AutoCompleteStringCollection();
             foreach (Customer customer in allCustomers)
             {
@@ -38,7 +38,7 @@ namespace DeliveryApp.Presentation
         }
 
         private void LoadProductsData(){
-            allProducts = ProductsService.GetAll();
+            allProducts = ProductsService.GetAllProducts();
             foreach (Product product in allProducts)
             {
                 this.cmbBxListProducts.Items.Add(product.Name);
@@ -91,13 +91,13 @@ namespace DeliveryApp.Presentation
             DateTime dueTime = this.dtTmPckrDueTime.Value;
             int totalPrice = Convert.ToInt32(this.lblOrderTotal.Text.ToString());
             int customerId = currentCustomer.Id;
-            int insertedOrderID = OrdersService.Create(orderNumber, dueTime, totalPrice, customerId, orderProductList);
+            int insertedOrderID = OrdersService.CreateOrder(orderNumber, dueTime, totalPrice, customerId, orderProductList);
             
             // TODO: implement getNewInvoiceNumber
             string invoiceNumber = "333";
             DateTime expeditionDate = DateTime.Now;
-            InvoicesService.Create(invoiceNumber, expeditionDate, insertedOrderID);
-            DeliveriesService.Create("Pending", insertedOrderID);
+            InvoicesService.CreateInvoice(invoiceNumber, expeditionDate, insertedOrderID);
+            DeliveriesService.CreateDelivery("Pending", insertedOrderID);
 
             // TODO: pending OrderId
             Order order = new(){
@@ -130,7 +130,7 @@ namespace DeliveryApp.Presentation
                 return;         
             }
 
-            allCustomers = CustomersService.GetByNamePattern(text);
+            allCustomers = CustomersService.GetCustomerByNamePattern(text);
 
             if (allCustomers.Count == 0)
             {

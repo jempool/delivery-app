@@ -18,7 +18,7 @@ namespace DeliveryApp.Presentation
 
         private void LoadCustomersData(){
             this.lstVwCustomersList.Items.Clear();
-            allCustomers = CustomersService.GetAll();
+            allCustomers = CustomersService.GetAllCustomers();
             foreach (Customer customer in allCustomers)
             {
                 var listViewItem = new ListViewItem(customer.CustomerFormat());
@@ -32,7 +32,7 @@ namespace DeliveryApp.Presentation
             string customerFono = txtBxCustomerFono.Text;
             string customerAddress = txtBxCustomerAddress.Text;
             
-            CustomersService.Create(customerName, customerFono, customerAddress);
+            CustomersService.CreateCustomer(customerName, customerFono, customerAddress);
             LoadCustomersData();
             ClearForm();
         }

@@ -6,7 +6,7 @@ namespace DeliveryApp.Service
 {
     public class ProductsService
     {
-        public static List<Product> GetAll()
+        public static List<Product> GetAllProducts()
         {
             return ProductsData.GetAll();
         }
