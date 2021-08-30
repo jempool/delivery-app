@@ -11,11 +11,9 @@ namespace DeliveryApp.Service
             CustomersData.Create(customerName, customerFono, customerAddress);
         }
 
-        public static void UpdateCustomer(string customerName, string customerFono, string customerAddress)
+        public static void UpdateCustomer(Customer customer)
         {
-            // TODO: implement method
-            int id = 0;
-            CustomersData.Update(id, customerName, customerFono, customerAddress); 
+            CustomersData.Update(customer); 
         }
 
         public static List<Customer> GetAllCustomers()

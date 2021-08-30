@@ -16,10 +16,13 @@ namespace DeliveryApp.Data
             Connection.ExecuteSQLQuery(query);
         }
 
-        public static void Update(int Id, string customerName, string customerFono, string customerAddress)
+        public static void Update(Customer customer)
         {
-            // TODO: Implement this method
-            Console.WriteLine($"Update Customer: {Id}, {customerName}, {customerFono}, {customerAddress}\n");
+            string query = "UPDATE Customers"
+                + $" SET Name ='{customer.Name}', PhoneNumber = {customer.PhoneNumber}, Address ='{customer.Address}'"
+                + $" WHERE ID={customer.Id}";
+            
+            Connection.ExecuteSQLQuery(query);
         }
 
         public static List<Customer> GetAll()

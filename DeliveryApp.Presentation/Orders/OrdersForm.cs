@@ -8,6 +8,13 @@ namespace DeliveryApp.Presentation
 {
     public partial class OrdersForm : Form
     {
+        private List<Product> allProducts = new();
+        private List<Customer> allCustomers = new();
+        private List<Product> selectedProductList = new();
+        private Customer selectedCustomer = new();
+
+        private AutoCompleteStringCollection data;
+
         public OrdersForm()
         {
             InitializeComponent();
@@ -18,13 +25,6 @@ namespace DeliveryApp.Presentation
             var random = new Random();
             this.lblOrderNumber.Text = random.Next(100, 999).ToString();            
         }
-
-        private List<Product> allProducts = new();
-        private List<Product> orderProductList = new();
-        private List<Customer> allCustomers = new();
-        private Customer currentCustomer = new();
-
-        private AutoCompleteStringCollection data;
 
         private void LoadCustomersData(){            
             allCustomers = CustomersService.GetAllCustomers();
@@ -49,7 +49,7 @@ namespace DeliveryApp.Presentation
         private void UpdateTotalPrice()
         {
             int totalPrice = 0;
-            foreach (Product product in orderProductList)
+            foreach (Product product in selectedProductList)
             {
                 totalPrice += product.Price * product.Quantity;
             }
@@ -59,15 +59,14 @@ namespace DeliveryApp.Presentation
         private void BtnAddCustomer_Click(object sender, System.EventArgs e)
         {
             CustomersForm customersForm = new();
-            customersForm.ShowDialog(ref currentCustomer);
+            customersForm.ShowDialog(ref selectedCustomer);
             SetSearchResult();   
         }
 
          private void BtnEditCustomer_Click(object sender, EventArgs e)
         {
-            // TODO: implement to pass the Customer to be edited
-            CustomersForm customersForm = new();
-            customersForm.ShowDialog(ref currentCustomer);
+            CustomersForm customersForm = new(selectedCustomer);
+            customersForm.ShowDialog(ref selectedCustomer);
             SetSearchResult();
         }
 
@@ -78,7 +77,7 @@ namespace DeliveryApp.Presentation
             product.Details = this.txtBxAddDetails.Text;
             product.Quantity = Convert.ToInt32(this.nmrcUpDwnQtyProduct.Value);
             
-            orderProductList.Add(product);
+            selectedProductList.Add(product);
             UpdateTotalPrice();
             
             var listViewItem = new ListViewItem(product.OrderFormat());
@@ -92,8 +91,8 @@ namespace DeliveryApp.Presentation
             string orderNumber = this.lblOrderNumber.Text;
             DateTime dueTime = this.dtTmPckrDueTime.Value;
             int totalPrice = Convert.ToInt32(this.lblOrderTotal.Text.ToString());
-            int customerId = currentCustomer.Id;
-            int insertedOrderID = OrdersService.CreateOrder(orderNumber, dueTime, totalPrice, customerId, orderProductList);
+            int customerId = selectedCustomer.Id;
+            int insertedOrderID = OrdersService.CreateOrder(orderNumber, dueTime, totalPrice, customerId, selectedProductList);
             
             // TODO: implement getNewInvoiceNumber
             string invoiceNumber = "333";
@@ -102,16 +101,16 @@ namespace DeliveryApp.Presentation
             DeliveriesService.CreateDelivery("Pending", insertedOrderID);
 
             // TODO: pending OrderId
-            Order order = new(){
+            Order currentOrder = new(){
                 Id = 666,
                 OrderNumber = orderNumber,
                 DueTime = dueTime,
                 TotalPrice = totalPrice,
                 CustomerId = customerId,
-                Products = orderProductList,
+                Products = selectedProductList,
                 };
 
-            InvoicesForm invoicesForm = new(order, currentCustomer);
+            InvoicesForm invoicesForm = new(currentOrder, selectedCustomer);
             invoicesForm.ShowDialog();
             
             ClearForm();
@@ -169,8 +168,8 @@ namespace DeliveryApp.Presentation
 
         private void ClearData()
         {
-            orderProductList = new();
-            currentCustomer = null;
+            selectedProductList = new();
+            selectedCustomer = null;
         }
 
         private void LstVwSearchResults_SelectedIndexChanged(object sender, EventArgs e)
@@ -178,9 +177,9 @@ namespace DeliveryApp.Presentation
             if (lstVwSearchResults.SelectedIndices.Count > 0)
             {
                 int selectedIndex = lstVwSearchResults.SelectedIndices[0];
-                currentCustomer = allCustomers[selectedIndex];
+                selectedCustomer = allCustomers[selectedIndex];
  
-                this.cmbBxSearchCustomer.Text = currentCustomer.Name;
+                this.cmbBxSearchCustomer.Text = selectedCustomer.Name;
                 this.lstVwSearchResults.Visible = false;
                 
                 SetSearchResult();
@@ -189,10 +188,11 @@ namespace DeliveryApp.Presentation
 
         private void SetSearchResult()
         {
-            if (!string.IsNullOrEmpty(currentCustomer.Name))
+            if (!string.IsNullOrEmpty(selectedCustomer.Name))
             {
-                string selectedCustomer = $"{currentCustomer.Name}\nFono: {currentCustomer.PhoneNumber}\nAddress: {currentCustomer.Address}";
-                this.lblSearchResult.Text = selectedCustomer;
+                this.cmbBxSearchCustomer.Text = string.Empty;
+                string infoCustomer = $"{selectedCustomer.Name}\nFono: {selectedCustomer.PhoneNumber}\nAddress: {selectedCustomer.Address}";
+                this.lblSearchResult.Text = infoCustomer;
             }
         }
     }

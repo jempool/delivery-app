@@ -8,27 +8,32 @@ namespace DeliveryApp.Presentation
 {
     public partial class CustomersForm : Form
     {
+        private List<Customer> allCustomers;
+        private Customer selectedCustomer;
+
         public CustomersForm()
         {
             InitializeComponent();
             LoadCustomersData();
         }
 
-        private List<Customer> allCustomers;
-        private Customer currentCustomer;
-
-        public DialogResult ShowDialog(ref Customer customer)
+        public CustomersForm(Customer customerToEdit)
         {
-            DialogResult dialogResult = base.ShowDialog();
-            if (currentCustomer != null)
-            {
-                customer = currentCustomer;                
-            }
-
-            return dialogResult;
+            InitializeComponent();
+            LoadCustomersData();
+            LoadCustomerToEdit(customerToEdit);
+            this.btnCreateCustomer.Text = "Update";
         }
+         private void LoadCustomerToEdit(Customer customerToEdit)
+         {
+            this.txtBxCustomerName.Text = customerToEdit.Name;
+            this.txtBxCustomerFono.Text = customerToEdit.PhoneNumber.ToString();
+            this.txtBxCustomerAddress.Text = customerToEdit.Address;
+            selectedCustomer = customerToEdit;
+         }
 
-        private void LoadCustomersData(){
+        private void LoadCustomersData()
+        {
             this.lstVwCustomersList.Items.Clear();
             allCustomers = CustomersService.GetAllCustomers();
             foreach (Customer customer in allCustomers)
@@ -37,12 +42,38 @@ namespace DeliveryApp.Presentation
                 this.lstVwCustomersList.Items.Add(listViewItem);
             }
         }
+        
+        public DialogResult ShowDialog(ref Customer customer)
+        {
+            DialogResult dialogResult = base.ShowDialog();
+            if (selectedCustomer != null)
+            {
+                customer = selectedCustomer;                
+            }
+
+            return dialogResult;
+        }
 
         private void BtnCreateCustomer_Click(object sender, System.EventArgs e)
         {
             string customerName = txtBxCustomerName.Text;
             string customerFono = txtBxCustomerFono.Text;
             string customerAddress = txtBxCustomerAddress.Text;
+
+            if (this.btnCreateCustomer.Text == "Update")
+            {
+                Customer customerToUpdate = new(){
+                    Id = selectedCustomer.Id,
+                    Name = customerName,
+                    PhoneNumber = Convert.ToInt32(customerFono),
+                    Address = customerAddress,
+                };
+
+                CustomersService.UpdateCustomer(customerToUpdate);
+                LoadCustomersData();
+                ClearForm();
+                return;
+            }
             
             CustomersService.CreateCustomer(customerName, customerFono, customerAddress);
             LoadCustomersData();
@@ -66,8 +97,8 @@ namespace DeliveryApp.Presentation
             if (lstVwCustomersList.SelectedIndices.Count > 0)
             {
                 int selectedIndex = lstVwCustomersList.SelectedIndices[0];
-                Customer customer = allCustomers[selectedIndex];
-                currentCustomer = customer;
+                Customer customerSelectedFromList = allCustomers[selectedIndex];
+                selectedCustomer = customerSelectedFromList;
                 this.Close();
             }
         }
