@@ -15,7 +15,7 @@ namespace DeliveryApp.Data
             string query = "DECLARE @OrderId INT;"
                             + " INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId)"
                             + " OUTPUT Inserted.ID as InsertedOrderID"
-                            + $" VALUES ({orderNumber}, '{dueTime:MM/dd/yyyy hh:mm:ss.fff}', {totalPrice}, {customerId})"
+                            + $" VALUES ({orderNumber}, '{dueTime:MM/dd/yyyy HH:mm:ss.fff}', {totalPrice}, {customerId})"
                             + " SET @OrderId = SCOPE_IDENTITY()"
                             + " INSERT INTO OrdersProducts (OrderId, ProductID, ProductQuantity, ProductDetails)"
                             + $" VALUES {sqlProductList}";

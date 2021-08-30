@@ -31,6 +31,7 @@ namespace DeliveryApp.Presentation
         private void InitializeComponent()
         {
             this.grpBxOrders = new System.Windows.Forms.GroupBox();
+            this.lblOrderTotal = new System.Windows.Forms.Label();
             this.lstVwSearchResults = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.lblInvoiceTotal = new System.Windows.Forms.Label();
@@ -38,10 +39,9 @@ namespace DeliveryApp.Presentation
             this.lblSearchResult = new System.Windows.Forms.Label();
             this.cmbBxSearchCustomer = new System.Windows.Forms.ComboBox();
             this.lblOrderNumber = new System.Windows.Forms.Label();
-            this.txtBxOrderTotal = new System.Windows.Forms.TextBox();
             this.btnCancelOrder = new System.Windows.Forms.Button();
             this.btnCreateOrder = new System.Windows.Forms.Button();
-            this.lblOrderTotal = new System.Windows.Forms.Label();
+            this.lblOrderTotalTitle = new System.Windows.Forms.Label();
             this.lstVwOrderProducts = new System.Windows.Forms.ListView();
             this.columnHeaderProducts = new System.Windows.Forms.ColumnHeader();
             this.columnHeaderQty = new System.Windows.Forms.ColumnHeader();
@@ -57,22 +57,24 @@ namespace DeliveryApp.Presentation
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.lblOrderTitleRight = new System.Windows.Forms.Label();
             this.lblOrderTitleLeft = new System.Windows.Forms.Label();
+            this.lblCurrency = new System.Windows.Forms.Label();
             this.grpBxOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrcUpDwnQtyProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // grpBxOrders
             // 
+            this.grpBxOrders.Controls.Add(this.lblCurrency);
+            this.grpBxOrders.Controls.Add(this.lblOrderTotal);
             this.grpBxOrders.Controls.Add(this.lstVwSearchResults);
             this.grpBxOrders.Controls.Add(this.lblInvoiceTotal);
             this.grpBxOrders.Controls.Add(this.btnEditCustomer);
             this.grpBxOrders.Controls.Add(this.lblSearchResult);
             this.grpBxOrders.Controls.Add(this.cmbBxSearchCustomer);
             this.grpBxOrders.Controls.Add(this.lblOrderNumber);
-            this.grpBxOrders.Controls.Add(this.txtBxOrderTotal);
             this.grpBxOrders.Controls.Add(this.btnCancelOrder);
             this.grpBxOrders.Controls.Add(this.btnCreateOrder);
-            this.grpBxOrders.Controls.Add(this.lblOrderTotal);
+            this.grpBxOrders.Controls.Add(this.lblOrderTotalTitle);
             this.grpBxOrders.Controls.Add(this.lstVwOrderProducts);
             this.grpBxOrders.Controls.Add(this.txtBxAddDetails);
             this.grpBxOrders.Controls.Add(this.lblOrderDetails);
@@ -92,6 +94,18 @@ namespace DeliveryApp.Presentation
             this.grpBxOrders.TabStop = false;
             this.grpBxOrders.Text = " Orders ";
             // 
+            // lblOrderTotal
+            // 
+            this.lblOrderTotal.BackColor = System.Drawing.Color.White;
+            this.lblOrderTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblOrderTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblOrderTotal.Location = new System.Drawing.Point(250, 436);
+            this.lblOrderTotal.Name = "lblOrderTotal";
+            this.lblOrderTotal.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.lblOrderTotal.Size = new System.Drawing.Size(117, 23);
+            this.lblOrderTotal.TabIndex = 33;
+            this.lblOrderTotal.Text = "0";
+            // 
             // lstVwSearchResults
             // 
             this.lstVwSearchResults.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -104,9 +118,8 @@ namespace DeliveryApp.Presentation
             this.lstVwSearchResults.Size = new System.Drawing.Size(232, 97);
             this.lstVwSearchResults.TabIndex = 32;
             this.lstVwSearchResults.UseCompatibleStateImageBehavior = false;
-            this.lstVwSearchResults.View = System.Windows.Forms.View.List;
+            this.lstVwSearchResults.View = System.Windows.Forms.View.Details;
             this.lstVwSearchResults.Visible = false;
-            this.lstVwSearchResults.View = View.Details;
             this.lstVwSearchResults.SelectedIndexChanged += new System.EventHandler(this.LstVwSearchResults_SelectedIndexChanged);
             // 
             // columnHeader1
@@ -160,16 +173,6 @@ namespace DeliveryApp.Presentation
             this.lblOrderNumber.TabIndex = 21;
             this.lblOrderNumber.Text = "005";
             // 
-            // txtBxOrderTotal
-            // 
-            this.txtBxOrderTotal.BackColor = System.Drawing.Color.White;
-            this.txtBxOrderTotal.Location = new System.Drawing.Point(267, 436);
-            this.txtBxOrderTotal.Name = "txtBxOrderTotal";
-            this.txtBxOrderTotal.ReadOnly = true;
-            this.txtBxOrderTotal.Size = new System.Drawing.Size(100, 23);
-            this.txtBxOrderTotal.TabIndex = 20;
-            this.txtBxOrderTotal.Text = "0";
-            // 
             // btnCancelOrder
             // 
             this.btnCancelOrder.Location = new System.Drawing.Point(199, 481);
@@ -190,15 +193,15 @@ namespace DeliveryApp.Presentation
             this.btnCreateOrder.UseVisualStyleBackColor = true;
             this.btnCreateOrder.Click += new System.EventHandler(this.BtnCreateOrder_Click);
             // 
-            // lblOrderTotal
+            // lblOrderTotalTitle
             // 
-            this.lblOrderTotal.AutoSize = true;
-            this.lblOrderTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblOrderTotal.Location = new System.Drawing.Point(17, 444);
-            this.lblOrderTotal.Name = "lblOrderTotal";
-            this.lblOrderTotal.Size = new System.Drawing.Size(34, 15);
-            this.lblOrderTotal.TabIndex = 16;
-            this.lblOrderTotal.Text = "Total";
+            this.lblOrderTotalTitle.AutoSize = true;
+            this.lblOrderTotalTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblOrderTotalTitle.Location = new System.Drawing.Point(17, 444);
+            this.lblOrderTotalTitle.Name = "lblOrderTotalTitle";
+            this.lblOrderTotalTitle.Size = new System.Drawing.Size(34, 15);
+            this.lblOrderTotalTitle.TabIndex = 16;
+            this.lblOrderTotalTitle.Text = "Total";
             // 
             // lstVwOrderProducts
             // 
@@ -345,6 +348,16 @@ namespace DeliveryApp.Presentation
             this.lblOrderTitleLeft.TabIndex = 0;
             this.lblOrderTitleLeft.Text = "Customer:";
             // 
+            // lblCurrency
+            // 
+            this.lblCurrency.BackColor = System.Drawing.Color.White;
+            this.lblCurrency.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCurrency.Location = new System.Drawing.Point(251, 438);
+            this.lblCurrency.Name = "lblCurrency";
+            this.lblCurrency.Size = new System.Drawing.Size(25, 16);
+            this.lblCurrency.TabIndex = 34;
+            this.lblCurrency.Text = "Bs.";
+            // 
             // OrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -375,19 +388,20 @@ namespace DeliveryApp.Presentation
         private TextBox txtBxAddDetails;
         private Label lblOrderDetails;
         private ListView lstVwOrderProducts;
-        private Label lblOrderTotal;
+        private Label lblOrderTotalTitle;
         private ColumnHeader columnHeaderProducts;
         private ColumnHeader columnHeaderQty;
         private ColumnHeader columnHeaderUntPrice;
         private Button btnCancelOrder;
         private Button btnCreateOrder;
-        private TextBox txtBxOrderTotal;
         private Label lblOrderNumber;
         private ComboBox cmbBxSearchCustomer;
         private Label lblSearchResult;
         private Label lblInvoiceTotal;
         private ListView lstVwSearchResults;
         private ColumnHeader columnHeader1;
+        private Label lblOrderTotal;
+        private Label lblCurrency;
     }
 }
 

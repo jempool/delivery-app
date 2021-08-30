@@ -18,6 +18,7 @@ namespace DeliveryApp.Presentation
             this.lblCustomerName.Text = customer.Name;
             this.lblCustomerFono.Text = customer.PhoneNumber.ToString();
             this.lblInvoiceTotal.Text = order.TotalPrice.ToString();
+            this.lblInvoiceDate.Text = order.DueTime.ToString("dd  /  MM  /  yyyy");
         }
 
         private void LoadProductsData(List<Product> productList){            

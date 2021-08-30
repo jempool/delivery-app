@@ -7,7 +7,7 @@ namespace DeliveryApp.Data
         public static void Create(string invoiceNumber, DateTime expeditionDate, int orderId)
         {
             string query = "INSERT INTO Invoices (InvoiceNumber, ExpeditionDate, OrderId)" 
-                        + $" VALUES ('{invoiceNumber}', '{expeditionDate:MM/dd/yyyy hh:mm:ss.fff}', {orderId})";
+                        + $" VALUES ('{invoiceNumber}', '{expeditionDate:MM/dd/yyyy HH:mm:ss.fff}', {orderId})";
 
             Connection.ExecuteSQLQuery(query);
         }

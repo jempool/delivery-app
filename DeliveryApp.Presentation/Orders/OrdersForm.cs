@@ -53,7 +53,7 @@ namespace DeliveryApp.Presentation
             {
                 totalPrice += product.Price * product.Quantity;
             }
-            this.txtBxOrderTotal.Text = totalPrice.ToString();
+            this.lblOrderTotal.Text = totalPrice.ToString();
         }
 
         private void BtnAddCustomer_Click(object sender, System.EventArgs e)
@@ -89,7 +89,7 @@ namespace DeliveryApp.Presentation
             // TODO: No action if no customer selected or at least one prod. selected
             string orderNumber = this.lblOrderNumber.Text;
             DateTime dueTime = this.dtTmPckrDueTime.Value;
-            int totalPrice = Convert.ToInt32(this.txtBxOrderTotal.Text.ToString());
+            int totalPrice = Convert.ToInt32(this.lblOrderTotal.Text.ToString());
             int customerId = currentCustomer.Id;
             int insertedOrderID = OrdersLogic.Create(orderNumber, dueTime, totalPrice, customerId, orderProductList);
             
@@ -161,7 +161,7 @@ namespace DeliveryApp.Presentation
             this.dtTmPckrDueTime.Value = DateTime.Now;
             ClearLastSelectedProduct();
             this.lstVwOrderProducts.Items.Clear();
-            this.txtBxOrderTotal.Clear();
+            this.lblOrderTotal.Text = "0";
         }
 
         private void ClearData()

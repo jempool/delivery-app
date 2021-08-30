@@ -48,11 +48,13 @@
             this.btnPrintInvoice = new System.Windows.Forms.Button();
             this.lblInvoiceFono = new System.Windows.Forms.Label();
             this.lblInvoiceName = new System.Windows.Forms.Label();
+            this.lblCurrency = new System.Windows.Forms.Label();
             this.grpBxInvoices.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpBxInvoices
             // 
+            this.grpBxInvoices.Controls.Add(this.lblCurrency);
             this.grpBxInvoices.Controls.Add(this.lblInvoiceTotal);
             this.grpBxInvoices.Controls.Add(this.lblCustomerFono);
             this.grpBxInvoices.Controls.Add(this.lblCustomerName);
@@ -79,10 +81,13 @@
             // 
             this.lblInvoiceTotal.BackColor = System.Drawing.Color.White;
             this.lblInvoiceTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblInvoiceTotal.Location = new System.Drawing.Point(313, 338);
+            this.lblInvoiceTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblInvoiceTotal.Location = new System.Drawing.Point(291, 338);
             this.lblInvoiceTotal.Name = "lblInvoiceTotal";
-            this.lblInvoiceTotal.Size = new System.Drawing.Size(58, 23);
+            this.lblInvoiceTotal.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.lblInvoiceTotal.Size = new System.Drawing.Size(80, 23);
             this.lblInvoiceTotal.TabIndex = 30;
+            this.lblInvoiceTotal.Text = "0";
             // 
             // lblCustomerFono
             // 
@@ -243,6 +248,16 @@
             this.lblInvoiceName.TabIndex = 2;
             this.lblInvoiceName.Text = "Mr/Mrs:";
             // 
+            // lblCurrency
+            // 
+            this.lblCurrency.BackColor = System.Drawing.Color.White;
+            this.lblCurrency.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCurrency.Location = new System.Drawing.Point(293, 339);
+            this.lblCurrency.Name = "lblCurrency";
+            this.lblCurrency.Size = new System.Drawing.Size(25, 16);
+            this.lblCurrency.TabIndex = 35;
+            this.lblCurrency.Text = "Bs.";
+            // 
             // InvoicesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -278,5 +293,6 @@
         private System.Windows.Forms.Label lblCustomerName;
         private System.Windows.Forms.Label lblCustomerFono;
         private System.Windows.Forms.Label lblInvoiceTotal;
+        private System.Windows.Forms.Label lblCurrency;
     }
 }
