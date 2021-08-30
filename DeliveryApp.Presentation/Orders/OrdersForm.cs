@@ -21,9 +21,8 @@ namespace DeliveryApp.Presentation
             LoadCustomersData();
             LoadProductsData();
             
-            // TODO: read order number from the database (current amount + 1)
-            var random = new Random();
-            this.lblOrderNumber.Text = random.Next(100, 999).ToString();            
+            string orderNumber = OrdersService.GetNewOrderNumber();
+            this.lblOrderNumber.Text = orderNumber;            
         }
 
         private void LoadCustomersData(){            
@@ -94,23 +93,21 @@ namespace DeliveryApp.Presentation
             int customerId = selectedCustomer.Id;
             int insertedOrderID = OrdersService.CreateOrder(orderNumber, dueTime, totalPrice, customerId, selectedProductList);
             
-            // TODO: implement getNewInvoiceNumber
-            string invoiceNumber = "333";
+            string invoiceNumber = InvoicesService.GetNewInvoiceNumber();
             DateTime expeditionDate = DateTime.Now;
             InvoicesService.CreateInvoice(invoiceNumber, expeditionDate, insertedOrderID);
             DeliveriesService.CreateDelivery("Pending", insertedOrderID);
-
-            // TODO: pending OrderId
+            
             Order currentOrder = new(){
-                Id = 666,
+                Id = insertedOrderID ,
                 OrderNumber = orderNumber,
-                DueTime = dueTime,
+                DueTime = DateTime.Now,
                 TotalPrice = totalPrice,
                 CustomerId = customerId,
                 Products = selectedProductList,
                 };
 
-            InvoicesForm invoicesForm = new(currentOrder, selectedCustomer);
+            InvoicesForm invoicesForm = new(currentOrder, selectedCustomer, invoiceNumber);
             invoicesForm.ShowDialog();
             
             ClearForm();

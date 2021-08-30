@@ -6,15 +6,16 @@ namespace DeliveryApp.Presentation
 {
     public partial class InvoicesForm : Form
     {
-        public InvoicesForm(Order order, Customer customer)
+        public InvoicesForm(Order order, Customer customer, string invoiceNumber)
         {
             InitializeComponent();
-            InitializeFields(order, customer);
+            InitializeFields(order, customer, invoiceNumber);
             LoadProductsData(order.Products);
         }
 
-        private void InitializeFields(Order order, Customer customer)
+        private void InitializeFields(Order order, Customer customer, string invoiceNumber)
         {
+            this.lblInvoiceNumber.Text = invoiceNumber;
             this.lblCustomerName.Text = customer.Name;
             this.lblCustomerFono.Text = customer.PhoneNumber.ToString();
             this.lblInvoiceTotal.Text = order.TotalPrice.ToString();

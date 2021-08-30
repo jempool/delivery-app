@@ -9,5 +9,10 @@ namespace DeliveryApp.Service
         {
             InvoicesData.Create(invoiceNumber, expeditionDate, orderId);
         }
+
+        public static string GetNewInvoiceNumber()
+        {
+            return InvoicesData.GetNewInvoiceNumber();
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace DeliveryApp.Service
         {
             return OrdersData.GetAll();
         }
+
+        public static string GetNewOrderNumber()
+        {
+            return OrdersData.GetNewOrderNumber();
+        }
     }
 }

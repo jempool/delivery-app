@@ -15,7 +15,7 @@ namespace DeliveryApp.Data
             string query = "DECLARE @OrderId INT;"
                             + " INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId)"
                             + " OUTPUT Inserted.ID as InsertedOrderID"
-                            + $" VALUES ({orderNumber}, '{dueTime:MM/dd/yyyy HH:mm:ss.fff}', {totalPrice}, {customerId})"
+                            + $" VALUES ('{orderNumber}', '{dueTime:MM/dd/yyyy HH:mm:ss.fff}', {totalPrice}, {customerId})"
                             + " SET @OrderId = SCOPE_IDENTITY()"
                             + " INSERT INTO OrdersProducts (OrderId, ProductID, ProductQuantity, ProductDetails)"
                             + $" VALUES {sqlProductList}";
@@ -46,6 +46,23 @@ namespace DeliveryApp.Data
             }).ToList();
 
             return ordertList;
+        }
+
+        public static string GetNewOrderNumber()
+        {
+            string query = "declare @OrderNumber as VarChar(16)"
+                           + " select @OrderNumber = "
+                           + "'ORD00' + Cast( ( select Count(Id) + 1 from Orders ) as VarChar(10) )"
+                           + " select @OrderNumber as 'OrderNumber'";
+
+            var dataTable = Connection.ExecuteSQLQuery(query);
+            var orderNumber = (from DataRow dr in dataTable.Rows 
+            select new
+            { 
+                Value = dr["OrderNumber"].ToString(),
+            }).First();
+            
+            return orderNumber.Value;
         }
 
         private static string ProductListToSQLProductList(List<Product> productList)

@@ -31,6 +31,7 @@ namespace DeliveryApp.Presentation
         private void InitializeComponent()
         {
             this.grpBxOrders = new System.Windows.Forms.GroupBox();
+            this.lblCurrency = new System.Windows.Forms.Label();
             this.lblOrderTotal = new System.Windows.Forms.Label();
             this.lstVwSearchResults = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
@@ -57,7 +58,6 @@ namespace DeliveryApp.Presentation
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.lblOrderTitleRight = new System.Windows.Forms.Label();
             this.lblOrderTitleLeft = new System.Windows.Forms.Label();
-            this.lblCurrency = new System.Windows.Forms.Label();
             this.grpBxOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrcUpDwnQtyProduct)).BeginInit();
             this.SuspendLayout();
@@ -93,6 +93,16 @@ namespace DeliveryApp.Presentation
             this.grpBxOrders.TabIndex = 0;
             this.grpBxOrders.TabStop = false;
             this.grpBxOrders.Text = " Orders ";
+            // 
+            // lblCurrency
+            // 
+            this.lblCurrency.BackColor = System.Drawing.Color.White;
+            this.lblCurrency.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCurrency.Location = new System.Drawing.Point(251, 438);
+            this.lblCurrency.Name = "lblCurrency";
+            this.lblCurrency.Size = new System.Drawing.Size(25, 16);
+            this.lblCurrency.TabIndex = 34;
+            this.lblCurrency.Text = "Bs.";
             // 
             // lblOrderTotal
             // 
@@ -167,11 +177,11 @@ namespace DeliveryApp.Presentation
             // lblOrderNumber
             // 
             this.lblOrderNumber.AutoSize = true;
-            this.lblOrderNumber.Location = new System.Drawing.Point(328, 34);
+            this.lblOrderNumber.Location = new System.Drawing.Point(302, 37);
             this.lblOrderNumber.Name = "lblOrderNumber";
-            this.lblOrderNumber.Size = new System.Drawing.Size(25, 15);
+            this.lblOrderNumber.Size = new System.Drawing.Size(55, 15);
             this.lblOrderNumber.TabIndex = 21;
-            this.lblOrderNumber.Text = "005";
+            this.lblOrderNumber.Text = "ORD0001";
             // 
             // btnCancelOrder
             // 
@@ -334,9 +344,9 @@ namespace DeliveryApp.Presentation
             this.lblOrderTitleRight.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblOrderTitleRight.Location = new System.Drawing.Point(269, 19);
             this.lblOrderTitleRight.Name = "lblOrderTitleRight";
-            this.lblOrderTitleRight.Size = new System.Drawing.Size(56, 30);
+            this.lblOrderTitleRight.Size = new System.Drawing.Size(92, 15);
             this.lblOrderTitleRight.TabIndex = 1;
-            this.lblOrderTitleRight.Text = "Order\r\nNumber:";
+            this.lblOrderTitleRight.Text = "Order Number:";
             // 
             // lblOrderTitleLeft
             // 
@@ -347,16 +357,6 @@ namespace DeliveryApp.Presentation
             this.lblOrderTitleLeft.Size = new System.Drawing.Size(64, 15);
             this.lblOrderTitleLeft.TabIndex = 0;
             this.lblOrderTitleLeft.Text = "Customer:";
-            // 
-            // lblCurrency
-            // 
-            this.lblCurrency.BackColor = System.Drawing.Color.White;
-            this.lblCurrency.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCurrency.Location = new System.Drawing.Point(251, 438);
-            this.lblCurrency.Name = "lblCurrency";
-            this.lblCurrency.Size = new System.Drawing.Size(25, 16);
-            this.lblCurrency.TabIndex = 34;
-            this.lblCurrency.Text = "Bs.";
             // 
             // OrdersForm
             // 
