@@ -16,7 +16,7 @@ namespace DeliveryApp.Presentation
             
             // TODO: read order number from the database (current amount + 1)
             var random = new Random();
-            this.lblOrderNumber.Text = random.Next(100, 999).ToString();
+            this.lblOrderNumber.Text = random.Next(100, 999).ToString();            
         }
 
         private List<Product> allProducts = new();
@@ -24,9 +24,11 @@ namespace DeliveryApp.Presentation
         private List<Customer> allCustomers = new();
         private Customer currentCustomer;
 
-        private void LoadCustomersData(){
+        private AutoCompleteStringCollection data;
+
+        private void LoadCustomersData(){            
             allCustomers = CustomersLogic.GetAll();
-            var data = new AutoCompleteStringCollection();
+            data = new AutoCompleteStringCollection();
             foreach (Customer customer in allCustomers)
             {
                 this.cmbBxSearchCustomer.Items.Add(customer.Name);
@@ -97,8 +99,6 @@ namespace DeliveryApp.Presentation
             InvoicesLogic.Create(invoiceNumber, expeditionDate, insertedOrderID);
             DeliveriesLogic.Create("Pending", insertedOrderID);
 
-            ClearForm();
-
             // TODO: pending OrderId
             Order order = new(){
                 Id = 666,
@@ -112,8 +112,8 @@ namespace DeliveryApp.Presentation
             InvoicesForm invoicesForm = new(order, currentCustomer);
             invoicesForm.ShowDialog();
             
-            // TODO: Cleaning also the data...
-            orderProductList = new();
+            ClearForm();
+            ClearData();
         }
 
         private void BtnCancelOrder_Click(object sender, System.EventArgs e)
@@ -121,12 +121,29 @@ namespace DeliveryApp.Presentation
             this.Close();
         }
 
-        private void CmbBxSearchCustomer_SelectedIndexChanged(object sender, EventArgs e)
+        private void CmbBxSearchCustomer_TextChanged(object sender, EventArgs e)
         {
-            int indexCustomer = this.cmbBxSearchCustomer.SelectedIndex;
-            currentCustomer = allCustomers[indexCustomer];
-            string selectedCustomer = $"{currentCustomer.Name}\n{currentCustomer.PhoneNumber}\n{currentCustomer.Address}";
-            this.lblSearchResult.Text = selectedCustomer;
+            string text = this.cmbBxSearchCustomer.Text;
+            if (string.IsNullOrEmpty(this.cmbBxSearchCustomer.Text) || string.IsNullOrEmpty(text))
+            {
+                this.lstVwSearchResults.Visible = false;
+                return;         
+            }
+
+            allCustomers = CustomersLogic.GetByNamePattern(text);
+
+            if (allCustomers.Count == 0)
+            {
+                return;
+            }            
+            
+            this.lstVwSearchResults.Items.Clear();
+            this.lstVwSearchResults.Visible = true;
+            foreach (Customer customer in allCustomers)
+            {
+                var listViewItem = new ListViewItem(customer.Name);
+                this.lstVwSearchResults.Items.Add(listViewItem);
+            }             
         }
 
         private void ClearLastSelectedProduct()
@@ -145,6 +162,27 @@ namespace DeliveryApp.Presentation
             ClearLastSelectedProduct();
             this.lstVwOrderProducts.Items.Clear();
             this.txtBxOrderTotal.Clear();
+        }
+
+        private void ClearData()
+        {
+            orderProductList = new();
+            currentCustomer = null;
+        }
+
+        private void LstVwSearchResults_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstVwSearchResults.SelectedIndices.Count > 0)
+            {
+                int selectedIndex = lstVwSearchResults.SelectedIndices[0];
+                Customer customer = allCustomers[selectedIndex];
+                currentCustomer = customer;
+
+                this.cmbBxSearchCustomer.Text = customer.Name;
+                this.lstVwSearchResults.Visible = false;
+                string selectedCustomer = $"{customer.Name}\nFono: {customer.PhoneNumber}\nAddress: {customer.Address}";
+                this.lblSearchResult.Text = selectedCustomer;
+            }
         }
     }
 }

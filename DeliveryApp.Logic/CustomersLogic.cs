@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data;
 using DeliveryApp.Data;
 using DeliveryApp.Data.Models;
 
@@ -21,6 +22,11 @@ namespace DeliveryApp.Logic
         public static List<Customer> GetAll()
         {
             return CustomersData.GetAll();
+        }
+
+        public static List<Customer> GetByNamePattern(string pattern)
+        {
+            return CustomersData.GetByNamePattern(pattern);
         }
     }
 }

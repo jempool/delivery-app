@@ -31,6 +31,9 @@ namespace DeliveryApp.Presentation
         private void InitializeComponent()
         {
             this.grpBxOrders = new System.Windows.Forms.GroupBox();
+            this.lstVwSearchResults = new System.Windows.Forms.ListView();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.lblInvoiceTotal = new System.Windows.Forms.Label();
             this.btnEditCustomer = new System.Windows.Forms.Button();
             this.lblSearchResult = new System.Windows.Forms.Label();
             this.cmbBxSearchCustomer = new System.Windows.Forms.ComboBox();
@@ -60,6 +63,8 @@ namespace DeliveryApp.Presentation
             // 
             // grpBxOrders
             // 
+            this.grpBxOrders.Controls.Add(this.lstVwSearchResults);
+            this.grpBxOrders.Controls.Add(this.lblInvoiceTotal);
             this.grpBxOrders.Controls.Add(this.btnEditCustomer);
             this.grpBxOrders.Controls.Add(this.lblSearchResult);
             this.grpBxOrders.Controls.Add(this.cmbBxSearchCustomer);
@@ -87,6 +92,35 @@ namespace DeliveryApp.Presentation
             this.grpBxOrders.TabStop = false;
             this.grpBxOrders.Text = " Orders ";
             // 
+            // lstVwSearchResults
+            // 
+            this.lstVwSearchResults.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.lstVwSearchResults.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lstVwSearchResults.HideSelection = false;
+            this.lstVwSearchResults.Location = new System.Drawing.Point(19, 89);
+            this.lstVwSearchResults.MultiSelect = false;
+            this.lstVwSearchResults.Name = "lstVwSearchResults";
+            this.lstVwSearchResults.Size = new System.Drawing.Size(232, 97);
+            this.lstVwSearchResults.TabIndex = 32;
+            this.lstVwSearchResults.UseCompatibleStateImageBehavior = false;
+            this.lstVwSearchResults.View = System.Windows.Forms.View.List;
+            this.lstVwSearchResults.Visible = false;
+            this.lstVwSearchResults.View = View.Details;
+            this.lstVwSearchResults.SelectedIndexChanged += new System.EventHandler(this.LstVwSearchResults_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Width = 200;
+            // 
+            // lblInvoiceTotal
+            // 
+            this.lblInvoiceTotal.BackColor = System.Drawing.Color.White;
+            this.lblInvoiceTotal.Location = new System.Drawing.Point(229, 66);
+            this.lblInvoiceTotal.Name = "lblInvoiceTotal";
+            this.lblInvoiceTotal.Size = new System.Drawing.Size(20, 18);
+            this.lblInvoiceTotal.TabIndex = 31;
+            // 
             // btnEditCustomer
             // 
             this.btnEditCustomer.Location = new System.Drawing.Point(306, 103);
@@ -109,14 +143,13 @@ namespace DeliveryApp.Presentation
             // 
             // cmbBxSearchCustomer
             // 
-            this.cmbBxSearchCustomer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbBxSearchCustomer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cmbBxSearchCustomer.FormattingEnabled = true;
             this.cmbBxSearchCustomer.Location = new System.Drawing.Point(19, 65);
             this.cmbBxSearchCustomer.Name = "cmbBxSearchCustomer";
             this.cmbBxSearchCustomer.Size = new System.Drawing.Size(232, 23);
             this.cmbBxSearchCustomer.TabIndex = 22;
-            this.cmbBxSearchCustomer.SelectedIndexChanged += new System.EventHandler(this.CmbBxSearchCustomer_SelectedIndexChanged);
+            this.cmbBxSearchCustomer.TextChanged += new System.EventHandler(this.CmbBxSearchCustomer_TextChanged);
             // 
             // lblOrderNumber
             // 
@@ -352,6 +385,9 @@ namespace DeliveryApp.Presentation
         private Label lblOrderNumber;
         private ComboBox cmbBxSearchCustomer;
         private Label lblSearchResult;
+        private Label lblInvoiceTotal;
+        private ListView lstVwSearchResults;
+        private ColumnHeader columnHeader1;
     }
 }
 
