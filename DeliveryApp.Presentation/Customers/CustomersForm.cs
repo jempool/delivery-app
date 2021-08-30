@@ -15,6 +15,18 @@ namespace DeliveryApp.Presentation
         }
 
         private List<Customer> allCustomers;
+        private Customer currentCustomer;
+
+        public DialogResult ShowDialog(ref Customer customer)
+        {
+            DialogResult dialogResult = base.ShowDialog();
+            if (currentCustomer != null)
+            {
+                customer = currentCustomer;                
+            }
+
+            return dialogResult;
+        }
 
         private void LoadCustomersData(){
             this.lstVwCustomersList.Items.Clear();
@@ -55,9 +67,8 @@ namespace DeliveryApp.Presentation
             {
                 int selectedIndex = lstVwCustomersList.SelectedIndices[0];
                 Customer customer = allCustomers[selectedIndex];
-                // TODO: Implement close and send back the the selected Customer
-                Console.WriteLine("name: " + customer.Name);
-                // CustomersService.Load
+                currentCustomer = customer;
+                this.Close();
             }
         }
     }

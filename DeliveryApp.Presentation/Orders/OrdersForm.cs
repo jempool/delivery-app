@@ -22,7 +22,7 @@ namespace DeliveryApp.Presentation
         private List<Product> allProducts = new();
         private List<Product> orderProductList = new();
         private List<Customer> allCustomers = new();
-        private Customer currentCustomer;
+        private Customer currentCustomer = new();
 
         private AutoCompleteStringCollection data;
 
@@ -59,14 +59,16 @@ namespace DeliveryApp.Presentation
         private void BtnAddCustomer_Click(object sender, System.EventArgs e)
         {
             CustomersForm customersForm = new();
-            customersForm.ShowDialog();
+            customersForm.ShowDialog(ref currentCustomer);
+            SetSearchResult();   
         }
 
          private void BtnEditCustomer_Click(object sender, EventArgs e)
         {
             // TODO: implement to pass the Customer to be edited
             CustomersForm customersForm = new();
-            customersForm.ShowDialog();
+            customersForm.ShowDialog(ref currentCustomer);
+            SetSearchResult();
         }
 
         private void BtnAddProduct_Click(object sender, System.EventArgs e)
@@ -139,6 +141,7 @@ namespace DeliveryApp.Presentation
             
             this.lstVwSearchResults.Items.Clear();
             this.lstVwSearchResults.Visible = true;
+            
             foreach (Customer customer in allCustomers)
             {
                 var listViewItem = new ListViewItem(customer.Name);
@@ -175,12 +178,20 @@ namespace DeliveryApp.Presentation
             if (lstVwSearchResults.SelectedIndices.Count > 0)
             {
                 int selectedIndex = lstVwSearchResults.SelectedIndices[0];
-                Customer customer = allCustomers[selectedIndex];
-                currentCustomer = customer;
-
-                this.cmbBxSearchCustomer.Text = customer.Name;
+                currentCustomer = allCustomers[selectedIndex];
+ 
+                this.cmbBxSearchCustomer.Text = currentCustomer.Name;
                 this.lstVwSearchResults.Visible = false;
-                string selectedCustomer = $"{customer.Name}\nFono: {customer.PhoneNumber}\nAddress: {customer.Address}";
+                
+                SetSearchResult();
+            }
+        }
+
+        private void SetSearchResult()
+        {
+            if (!string.IsNullOrEmpty(currentCustomer.Name))
+            {
+                string selectedCustomer = $"{currentCustomer.Name}\nFono: {currentCustomer.PhoneNumber}\nAddress: {currentCustomer.Address}";
                 this.lblSearchResult.Text = selectedCustomer;
             }
         }
