@@ -1,6 +1,6 @@
 using System;
 using System.Windows.Forms;
-using DeliveryApp.Presentation.Orders;
+using DeliveryApp.Presentation;
 
 namespace DeliveryApp.Presentation
 {
@@ -12,10 +12,10 @@ namespace DeliveryApp.Presentation
         [STAThread]
         static void Main()
         {
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            // Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new OrdersForm());
+            Application.Run(new MenuForm());
         }
     }
 }

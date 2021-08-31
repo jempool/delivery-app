@@ -53,7 +53,7 @@
             this.grpBxDeliveries.Controls.Add(this.lblFromTitle);
             this.grpBxDeliveries.Location = new System.Drawing.Point(13, 13);
             this.grpBxDeliveries.Name = "grpBxDeliveries";
-            this.grpBxDeliveries.Size = new System.Drawing.Size(523, 519);
+            this.grpBxDeliveries.Size = new System.Drawing.Size(523, 425);
             this.grpBxDeliveries.TabIndex = 0;
             this.grpBxDeliveries.TabStop = false;
             this.grpBxDeliveries.Text = " Deliveries ";

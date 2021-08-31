@@ -102,47 +102,29 @@ INSERT INTO Customers (Name, PhoneNumber, Address) VALUES ('Carla Strauss', 2236
 INSERT INTO Customers (Name, PhoneNumber, Address) VALUES ('Jhon Taylor', 99868928, '280 Washington Street')
 INSERT INTO Customers (Name, PhoneNumber, Address) VALUES ('Monica Wilson', 68760990, 'Lynn MA 1905')
 INSERT INTO Customers (Name, PhoneNumber, Address) VALUES ('Andre Kotn', 78768977, '506 State Road')
-INSERT INTO Customers (Name, PhoneNumber, Address) VALUES ('', 18768900, 'North Reading MA 1864')
+INSERT INTO Customers (Name, PhoneNumber, Address) VALUES ('Simon Carlman', 18768900, 'North Reading MA 1864')
 
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD001', '20210829 10:34:09 AM', 500, 1)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD002', '20210828 08:00:00 AM', 600, 2)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD003', '20210828 12:10:00 PM', 440, 3)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD004', '20210829 10:34:09 AM', 510, 4)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD005', '20210828 09:00:00 AM', 610, 5)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD006', '20210830 12:30:00 PM', 1440, 6)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD007', '20210831 10:34:09 AM', 900, 7)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD008', '20210831 01:00:00 PM', 800, 8)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD009', '20210831 12:20:00 PM', 340, 9)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD010', '20210830 10:34:09 AM', 530, 10)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD011', '20210901 08:00:00 AM', 660, 11)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD012', '20210901 12:30:00 PM', 110, 12)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD013', '20210902 10:34:09 AM', 1500, 13)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD014', '20210903 08:00:00 AM', 600, 1)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD015', '20210901 12:30:00 PM', 140, 2)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD016', '20210901 10:20:09 PM', 550, 3)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD017', '20210902 08:20:00 AM', 670, 4)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD018', '20210902 11:40:00 PM', 190, 5)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD019', '20210904 11:40:00 PM', 550, 6)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD020', '20210904 11:40:00 PM', 900, 7)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD021', '20210904 11:40:00 PM', 1190, 8)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD022', '20210902 11:40:00 PM', 590, 9)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD023', '20210902 11:40:00 PM', 160, 10)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD024', '20210901 11:40:00 PM', 600, 11)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD025', '20210827 11:40:00 PM', 330, 12)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD026', '20210828 11:40:00 PM', 210, 13)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD027', '20210829 11:40:00 PM', 790, 1)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD028', '20210901 11:40:00 PM', 990, 2)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD029', '20210830 11:40:00 PM', 960, 14)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD031', '20210830 12:40:00 PM', 1980, 15)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD032', '20210830 01:40:00 PM', 290, 16)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD033', '20210830 02:40:00 PM', 360, 17)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD034', '20210830 11:40:00 PM', 490, 18)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD035', '20210830 11:40:00 PM', 590, 18)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD036', '20210830 03:40:00 PM', 680, 14)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD037', '20210831 11:40:00 PM', 760, 15)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD038', '20210831 04:40:00 PM', 890, 16)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD039', '20210831 11:40:00 PM', 1990, 17)
-INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES ('ORD040', '20210831 05:40:00 AM', 560, 18)
+INSERT INTO Orders (OrderNumber, DueTime, TotalPrice, CustomerId) VALUES 
+    ('ORD001', '20210829 10:34:09 AM', 500, 1), ('ORD002', '20210828 08:00:00 AM', 600, 2), 
+    ('ORD003', '20210828 12:10:00 PM', 440, 3), ('ORD004', '20210829 10:34:09 AM', 510, 4), 
+    ('ORD005', '20210828 09:00:00 AM', 610, 5), ('ORD006', '20210830 12:30:00 PM', 1440, 6),
+    ('ORD007', '20210831 10:34:09 AM', 900, 7), ('ORD008', '20210831 01:00:00 PM', 800, 8),
+    ('ORD009', '20210831 12:20:00 PM', 340, 9), ('ORD010', '20210830 10:34:09 AM', 530, 10),
+    ('ORD011', '20210901 08:00:00 AM', 660, 11), ('ORD012', '20210901 12:30:00 PM', 110, 12),
+    ('ORD013', '20210902 10:34:09 AM', 150, 13), ('ORD014', '20210903 08:00:00 AM', 600, 1),
+    ('ORD015', '20210901 12:30:00 PM', 140, 2), ('ORD016', '20210901 10:20:09 PM', 550, 3),
+    ('ORD017', '20210902 08:20:00 AM', 670, 4), ('ORD018', '20210902 11:40:00 PM', 190, 5),
+    ('ORD019', '20210904 11:40:00 PM', 550, 6), ('ORD020', '20210904 11:40:00 PM', 900, 7),
+    ('ORD021', '20210904 11:40:00 PM', 110, 8), ('ORD022', '20210902 11:40:00 PM', 590, 9),
+    ('ORD023', '20210902 11:40:00 PM', 160, 10), ('ORD024', '20210901 11:40:00 PM', 600, 11),
+    ('ORD025', '20210827 11:40:00 PM', 330, 12), ('ORD026', '20210828 11:40:00 PM', 210, 13),
+    ('ORD027', '20210829 11:40:00 PM', 790, 1), ('ORD028', '20210901 11:40:00 PM', 990, 2),
+    ('ORD029', '20210830 11:40:00 PM', 960, 14), ('ORD030', '20210831 10:50:00 PM', 960, 14), 
+    ('ORD031', '20210830 12:40:00 PM', 1980, 15), ('ORD032', '20210830 01:40:00 PM', 290, 16), 
+    ('ORD033', '20210830 02:40:00 PM', 360, 17), ('ORD034', '20210830 11:40:00 PM', 490, 18), 
+    ('ORD035', '20210830 11:40:00 PM', 590, 18), ('ORD036', '20210830 03:40:00 PM', 680, 14), 
+    ('ORD037', '20210831 11:40:00 PM', 760, 15), ('ORD038', '20210831 04:40:00 PM', 890, 16),
+    ('ORD039', '20210831 11:40:00 PM', 1990, 17), ('ORD040', '20210831 05:40:00 AM', 560, 18)
 
 INSERT INTO OrdersProducts (OrderId, ProductID, ProductQuantity, ProductDetails) VALUES (1, 1, 2, 'peperoni')
 INSERT INTO OrdersProducts (OrderId, ProductID, ProductQuantity, ProductDetails) VALUES (1, 3, 4, 'onion')
@@ -203,3 +185,10 @@ SELECT * FROM Deliveries
 GO
 
 -- CREATE INDEX indexed_names ON Customers (Name);
+
+-- create view view_Pending_Deliveries
+-- as  
+-- SELECT Deliveries.ID, Orders.OrderNumber, Orders.DueTime, Customers.Name, Deliveries.Status
+-- FROM Orders INNER JOIN Deliveries ON Orders.ID=Deliveries.ID
+-- INNER JOIN Customers ON Orders.CustomerId=Customers.ID  
+-- GO 
