@@ -35,10 +35,10 @@
             // 
             // btnOrders
             // 
-            this.btnOrders.Location = new System.Drawing.Point(23, 56);
+            this.btnOrders.Location = new System.Drawing.Point(32, 49);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnOrders.Size = new System.Drawing.Size(75, 23);
+            this.btnOrders.Size = new System.Drawing.Size(64, 20);
             this.btnOrders.TabIndex = 0;
             this.btnOrders.Text = "Orders";
             this.btnOrders.UseVisualStyleBackColor = true;
@@ -46,9 +46,9 @@
             // 
             // btnDeliveries
             // 
-            this.btnDeliveries.Location = new System.Drawing.Point(116, 56);
+            this.btnDeliveries.Location = new System.Drawing.Point(111, 49);
             this.btnDeliveries.Name = "btnDeliveries";
-            this.btnDeliveries.Size = new System.Drawing.Size(75, 23);
+            this.btnDeliveries.Size = new System.Drawing.Size(64, 20);
             this.btnDeliveries.TabIndex = 1;
             this.btnDeliveries.Text = "Deliveries";
             this.btnDeliveries.UseVisualStyleBackColor = true;
@@ -57,8 +57,8 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitle.Location = new System.Drawing.Point(43, 9);
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.Location = new System.Drawing.Point(46, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(127, 25);
             this.lblTitle.TabIndex = 11;
@@ -66,9 +66,9 @@
             // 
             // MenuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(220, 110);
+            this.ClientSize = new System.Drawing.Size(213, 95);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnDeliveries);
             this.Controls.Add(this.btnOrders);

@@ -8,10 +8,10 @@ namespace DeliveryApp.Presentation
 {
     public partial class OrdersForm : Form
     {
-        private List<Product> allProducts = new();
-        private List<Customer> allCustomers = new();
-        private List<Product> selectedProductList = new();
-        private Customer selectedCustomer = new();
+        private List<Product> allProducts = new List<Product>();
+        private List<Customer> allCustomers = new List<Customer>();
+        private List<Product> selectedProductList = new List<Product>();
+        private Customer selectedCustomer = new Customer();
 
         private AutoCompleteStringCollection data;
 
@@ -57,14 +57,14 @@ namespace DeliveryApp.Presentation
 
         private void BtnAddCustomer_Click(object sender, System.EventArgs e)
         {
-            CustomersForm customersForm = new();
+            CustomersForm customersForm = new CustomersForm();
             customersForm.ShowDialog(ref selectedCustomer);
             SetSearchResult();   
         }
 
          private void BtnEditCustomer_Click(object sender, EventArgs e)
         {
-            CustomersForm customersForm = new(selectedCustomer);
+            CustomersForm customersForm = new CustomersForm(selectedCustomer);
             customersForm.ShowDialog(ref selectedCustomer);
             SetSearchResult();
         }
@@ -98,7 +98,7 @@ namespace DeliveryApp.Presentation
             InvoicesService.CreateInvoice(invoiceNumber, expeditionDate, insertedOrderID);
             DeliveriesService.CreateDelivery("Pending", insertedOrderID);
             
-            Order currentOrder = new(){
+            Order currentOrder = new Order(){
                 Id = insertedOrderID ,
                 OrderNumber = orderNumber,
                 DueTime = DateTime.Now,
@@ -107,7 +107,7 @@ namespace DeliveryApp.Presentation
                 Products = selectedProductList,
                 };
 
-            InvoicesForm invoicesForm = new(currentOrder, selectedCustomer, invoiceNumber);
+            InvoicesForm invoicesForm = new InvoicesForm(currentOrder, selectedCustomer, invoiceNumber);
             invoicesForm.ShowDialog();
             
             ClearForm();
@@ -165,7 +165,7 @@ namespace DeliveryApp.Presentation
 
         private void ClearData()
         {
-            selectedProductList = new();
+            selectedProductList = new List<Product>();
             selectedCustomer = null;
         }
 

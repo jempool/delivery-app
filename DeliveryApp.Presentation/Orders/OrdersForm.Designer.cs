@@ -34,7 +34,7 @@ namespace DeliveryApp.Presentation
             this.lblCurrency = new System.Windows.Forms.Label();
             this.lblOrderTotal = new System.Windows.Forms.Label();
             this.lstVwSearchResults = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblInvoiceTotal = new System.Windows.Forms.Label();
             this.btnEditCustomer = new System.Windows.Forms.Button();
             this.lblSearchResult = new System.Windows.Forms.Label();
@@ -44,9 +44,9 @@ namespace DeliveryApp.Presentation
             this.btnCreateOrder = new System.Windows.Forms.Button();
             this.lblOrderTotalTitle = new System.Windows.Forms.Label();
             this.lstVwOrderProducts = new System.Windows.Forms.ListView();
-            this.columnHeaderProducts = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderQty = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderUntPrice = new System.Windows.Forms.ColumnHeader();
+            this.columnHeaderProducts = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderQty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderUntPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtBxAddDetails = new System.Windows.Forms.TextBox();
             this.lblOrderDetails = new System.Windows.Forms.Label();
             this.btnAddProduct = new System.Windows.Forms.Button();
@@ -87,9 +87,9 @@ namespace DeliveryApp.Presentation
             this.grpBxOrders.Controls.Add(this.btnAddCustomer);
             this.grpBxOrders.Controls.Add(this.lblOrderTitleRight);
             this.grpBxOrders.Controls.Add(this.lblOrderTitleLeft);
-            this.grpBxOrders.Location = new System.Drawing.Point(13, 13);
+            this.grpBxOrders.Location = new System.Drawing.Point(11, 11);
             this.grpBxOrders.Name = "grpBxOrders";
-            this.grpBxOrders.Size = new System.Drawing.Size(384, 519);
+            this.grpBxOrders.Size = new System.Drawing.Size(329, 450);
             this.grpBxOrders.TabIndex = 0;
             this.grpBxOrders.TabStop = false;
             this.grpBxOrders.Text = " Orders ";
@@ -97,10 +97,10 @@ namespace DeliveryApp.Presentation
             // lblCurrency
             // 
             this.lblCurrency.BackColor = System.Drawing.Color.White;
-            this.lblCurrency.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCurrency.Location = new System.Drawing.Point(251, 438);
+            this.lblCurrency.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblCurrency.Location = new System.Drawing.Point(215, 380);
             this.lblCurrency.Name = "lblCurrency";
-            this.lblCurrency.Size = new System.Drawing.Size(25, 16);
+            this.lblCurrency.Size = new System.Drawing.Size(21, 14);
             this.lblCurrency.TabIndex = 34;
             this.lblCurrency.Text = "Bs.";
             // 
@@ -108,11 +108,11 @@ namespace DeliveryApp.Presentation
             // 
             this.lblOrderTotal.BackColor = System.Drawing.Color.White;
             this.lblOrderTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblOrderTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblOrderTotal.Location = new System.Drawing.Point(250, 436);
+            this.lblOrderTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblOrderTotal.Location = new System.Drawing.Point(214, 378);
             this.lblOrderTotal.Name = "lblOrderTotal";
-            this.lblOrderTotal.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.lblOrderTotal.Size = new System.Drawing.Size(117, 23);
+            this.lblOrderTotal.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
+            this.lblOrderTotal.Size = new System.Drawing.Size(101, 20);
             this.lblOrderTotal.TabIndex = 33;
             this.lblOrderTotal.Text = "0";
             // 
@@ -122,10 +122,10 @@ namespace DeliveryApp.Presentation
             this.columnHeader1});
             this.lstVwSearchResults.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lstVwSearchResults.HideSelection = false;
-            this.lstVwSearchResults.Location = new System.Drawing.Point(19, 89);
+            this.lstVwSearchResults.Location = new System.Drawing.Point(16, 77);
             this.lstVwSearchResults.MultiSelect = false;
             this.lstVwSearchResults.Name = "lstVwSearchResults";
-            this.lstVwSearchResults.Size = new System.Drawing.Size(232, 97);
+            this.lstVwSearchResults.Size = new System.Drawing.Size(212, 85);
             this.lstVwSearchResults.TabIndex = 32;
             this.lstVwSearchResults.UseCompatibleStateImageBehavior = false;
             this.lstVwSearchResults.View = System.Windows.Forms.View.Details;
@@ -139,16 +139,16 @@ namespace DeliveryApp.Presentation
             // lblInvoiceTotal
             // 
             this.lblInvoiceTotal.BackColor = System.Drawing.Color.White;
-            this.lblInvoiceTotal.Location = new System.Drawing.Point(229, 66);
+            this.lblInvoiceTotal.Location = new System.Drawing.Point(196, 57);
             this.lblInvoiceTotal.Name = "lblInvoiceTotal";
-            this.lblInvoiceTotal.Size = new System.Drawing.Size(20, 18);
+            this.lblInvoiceTotal.Size = new System.Drawing.Size(17, 16);
             this.lblInvoiceTotal.TabIndex = 31;
             // 
             // btnEditCustomer
             // 
-            this.btnEditCustomer.Location = new System.Drawing.Point(306, 103);
+            this.btnEditCustomer.Location = new System.Drawing.Point(262, 89);
             this.btnEditCustomer.Name = "btnEditCustomer";
-            this.btnEditCustomer.Size = new System.Drawing.Size(50, 23);
+            this.btnEditCustomer.Size = new System.Drawing.Size(43, 20);
             this.btnEditCustomer.TabIndex = 5;
             this.btnEditCustomer.Text = "Edit";
             this.btnEditCustomer.UseVisualStyleBackColor = true;
@@ -158,36 +158,36 @@ namespace DeliveryApp.Presentation
             // 
             this.lblSearchResult.BackColor = System.Drawing.Color.White;
             this.lblSearchResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSearchResult.Location = new System.Drawing.Point(19, 95);
-            this.lblSearchResult.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.lblSearchResult.Location = new System.Drawing.Point(16, 82);
+            this.lblSearchResult.Margin = new System.Windows.Forms.Padding(3, 9, 3, 0);
             this.lblSearchResult.Name = "lblSearchResult";
-            this.lblSearchResult.Size = new System.Drawing.Size(344, 62);
+            this.lblSearchResult.Size = new System.Drawing.Size(295, 54);
             this.lblSearchResult.TabIndex = 23;
             // 
             // cmbBxSearchCustomer
             // 
             this.cmbBxSearchCustomer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cmbBxSearchCustomer.FormattingEnabled = true;
-            this.cmbBxSearchCustomer.Location = new System.Drawing.Point(19, 65);
+            this.cmbBxSearchCustomer.Location = new System.Drawing.Point(16, 56);
             this.cmbBxSearchCustomer.Name = "cmbBxSearchCustomer";
-            this.cmbBxSearchCustomer.Size = new System.Drawing.Size(232, 23);
+            this.cmbBxSearchCustomer.Size = new System.Drawing.Size(199, 21);
             this.cmbBxSearchCustomer.TabIndex = 22;
             this.cmbBxSearchCustomer.TextChanged += new System.EventHandler(this.CmbBxSearchCustomer_TextChanged);
             // 
             // lblOrderNumber
             // 
             this.lblOrderNumber.AutoSize = true;
-            this.lblOrderNumber.Location = new System.Drawing.Point(302, 37);
+            this.lblOrderNumber.Location = new System.Drawing.Point(259, 32);
             this.lblOrderNumber.Name = "lblOrderNumber";
-            this.lblOrderNumber.Size = new System.Drawing.Size(55, 15);
+            this.lblOrderNumber.Size = new System.Drawing.Size(55, 13);
             this.lblOrderNumber.TabIndex = 21;
             this.lblOrderNumber.Text = "ORD0001";
             // 
             // btnCancelOrder
             // 
-            this.btnCancelOrder.Location = new System.Drawing.Point(199, 481);
+            this.btnCancelOrder.Location = new System.Drawing.Point(171, 417);
             this.btnCancelOrder.Name = "btnCancelOrder";
-            this.btnCancelOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelOrder.Size = new System.Drawing.Size(64, 20);
             this.btnCancelOrder.TabIndex = 18;
             this.btnCancelOrder.Text = "Cancel";
             this.btnCancelOrder.UseVisualStyleBackColor = true;
@@ -195,9 +195,9 @@ namespace DeliveryApp.Presentation
             // 
             // btnCreateOrder
             // 
-            this.btnCreateOrder.Location = new System.Drawing.Point(87, 481);
+            this.btnCreateOrder.Location = new System.Drawing.Point(75, 417);
             this.btnCreateOrder.Name = "btnCreateOrder";
-            this.btnCreateOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnCreateOrder.Size = new System.Drawing.Size(64, 20);
             this.btnCreateOrder.TabIndex = 17;
             this.btnCreateOrder.Text = "Create";
             this.btnCreateOrder.UseVisualStyleBackColor = true;
@@ -206,8 +206,8 @@ namespace DeliveryApp.Presentation
             // lblOrderTotalTitle
             // 
             this.lblOrderTotalTitle.AutoSize = true;
-            this.lblOrderTotalTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblOrderTotalTitle.Location = new System.Drawing.Point(17, 444);
+            this.lblOrderTotalTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblOrderTotalTitle.Location = new System.Drawing.Point(15, 385);
             this.lblOrderTotalTitle.Name = "lblOrderTotalTitle";
             this.lblOrderTotalTitle.Size = new System.Drawing.Size(34, 15);
             this.lblOrderTotalTitle.TabIndex = 16;
@@ -220,9 +220,9 @@ namespace DeliveryApp.Presentation
             this.columnHeaderQty,
             this.columnHeaderUntPrice});
             this.lstVwOrderProducts.HideSelection = false;
-            this.lstVwOrderProducts.Location = new System.Drawing.Point(17, 317);
+            this.lstVwOrderProducts.Location = new System.Drawing.Point(15, 275);
             this.lstVwOrderProducts.Name = "lstVwOrderProducts";
-            this.lstVwOrderProducts.Size = new System.Drawing.Size(350, 119);
+            this.lstVwOrderProducts.Size = new System.Drawing.Size(301, 104);
             this.lstVwOrderProducts.TabIndex = 14;
             this.lstVwOrderProducts.UseCompatibleStateImageBehavior = false;
             this.lstVwOrderProducts.View = System.Windows.Forms.View.Details;
@@ -230,11 +230,12 @@ namespace DeliveryApp.Presentation
             // columnHeaderProducts
             // 
             this.columnHeaderProducts.Text = "Products";
-            this.columnHeaderProducts.Width = 186;
+            this.columnHeaderProducts.Width = 144;
             // 
             // columnHeaderQty
             // 
             this.columnHeaderQty.Text = "Qty";
+            this.columnHeaderQty.Width = 48;
             // 
             // columnHeaderUntPrice
             // 
@@ -243,17 +244,17 @@ namespace DeliveryApp.Presentation
             // 
             // txtBxAddDetails
             // 
-            this.txtBxAddDetails.Location = new System.Drawing.Point(73, 250);
+            this.txtBxAddDetails.Location = new System.Drawing.Point(63, 217);
             this.txtBxAddDetails.Multiline = true;
             this.txtBxAddDetails.Name = "txtBxAddDetails";
-            this.txtBxAddDetails.Size = new System.Drawing.Size(294, 52);
+            this.txtBxAddDetails.Size = new System.Drawing.Size(253, 46);
             this.txtBxAddDetails.TabIndex = 13;
             // 
             // lblOrderDetails
             // 
             this.lblOrderDetails.AutoSize = true;
-            this.lblOrderDetails.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblOrderDetails.Location = new System.Drawing.Point(19, 259);
+            this.lblOrderDetails.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblOrderDetails.Location = new System.Drawing.Point(16, 224);
             this.lblOrderDetails.Name = "lblOrderDetails";
             this.lblOrderDetails.Size = new System.Drawing.Size(48, 15);
             this.lblOrderDetails.TabIndex = 12;
@@ -261,9 +262,9 @@ namespace DeliveryApp.Presentation
             // 
             // btnAddProduct
             // 
-            this.btnAddProduct.Location = new System.Drawing.Point(258, 215);
+            this.btnAddProduct.Location = new System.Drawing.Point(221, 186);
             this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Size = new System.Drawing.Size(109, 23);
+            this.btnAddProduct.Size = new System.Drawing.Size(93, 20);
             this.btnAddProduct.TabIndex = 11;
             this.btnAddProduct.Text = "Add Product";
             this.btnAddProduct.UseVisualStyleBackColor = true;
@@ -273,16 +274,16 @@ namespace DeliveryApp.Presentation
             // 
             this.dtTmPckrDueTime.CustomFormat = " dd/MM/yyyy hh:mm tt";
             this.dtTmPckrDueTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtTmPckrDueTime.Location = new System.Drawing.Point(87, 180);
+            this.dtTmPckrDueTime.Location = new System.Drawing.Point(85, 156);
             this.dtTmPckrDueTime.Name = "dtTmPckrDueTime";
-            this.dtTmPckrDueTime.Size = new System.Drawing.Size(165, 23);
+            this.dtTmPckrDueTime.Size = new System.Drawing.Size(142, 20);
             this.dtTmPckrDueTime.TabIndex = 10;
             // 
             // lblOrderDueTime
             // 
             this.lblOrderDueTime.AutoSize = true;
-            this.lblOrderDueTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblOrderDueTime.Location = new System.Drawing.Point(17, 183);
+            this.lblOrderDueTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblOrderDueTime.Location = new System.Drawing.Point(15, 159);
             this.lblOrderDueTime.Name = "lblOrderDueTime";
             this.lblOrderDueTime.Size = new System.Drawing.Size(64, 15);
             this.lblOrderDueTime.TabIndex = 9;
@@ -290,7 +291,7 @@ namespace DeliveryApp.Presentation
             // 
             // nmrcUpDwnQtyProduct
             // 
-            this.nmrcUpDwnQtyProduct.Location = new System.Drawing.Point(204, 215);
+            this.nmrcUpDwnQtyProduct.Location = new System.Drawing.Point(175, 186);
             this.nmrcUpDwnQtyProduct.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -302,7 +303,7 @@ namespace DeliveryApp.Presentation
             0,
             0});
             this.nmrcUpDwnQtyProduct.Name = "nmrcUpDwnQtyProduct";
-            this.nmrcUpDwnQtyProduct.Size = new System.Drawing.Size(40, 23);
+            this.nmrcUpDwnQtyProduct.Size = new System.Drawing.Size(34, 20);
             this.nmrcUpDwnQtyProduct.TabIndex = 8;
             this.nmrcUpDwnQtyProduct.Value = new decimal(new int[] {
             1,
@@ -313,8 +314,8 @@ namespace DeliveryApp.Presentation
             // lblOrderQtyProduct
             // 
             this.lblOrderQtyProduct.AutoSize = true;
-            this.lblOrderQtyProduct.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblOrderQtyProduct.Location = new System.Drawing.Point(168, 218);
+            this.lblOrderQtyProduct.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblOrderQtyProduct.Location = new System.Drawing.Point(144, 189);
             this.lblOrderQtyProduct.Name = "lblOrderQtyProduct";
             this.lblOrderQtyProduct.Size = new System.Drawing.Size(30, 15);
             this.lblOrderQtyProduct.TabIndex = 7;
@@ -323,16 +324,16 @@ namespace DeliveryApp.Presentation
             // cmbBxListProducts
             // 
             this.cmbBxListProducts.FormattingEnabled = true;
-            this.cmbBxListProducts.Location = new System.Drawing.Point(19, 215);
+            this.cmbBxListProducts.Location = new System.Drawing.Point(16, 186);
             this.cmbBxListProducts.Name = "cmbBxListProducts";
-            this.cmbBxListProducts.Size = new System.Drawing.Size(143, 23);
+            this.cmbBxListProducts.Size = new System.Drawing.Size(123, 21);
             this.cmbBxListProducts.TabIndex = 6;
             // 
             // btnAddCustomer
             // 
-            this.btnAddCustomer.Location = new System.Drawing.Point(258, 65);
+            this.btnAddCustomer.Location = new System.Drawing.Point(221, 56);
             this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(109, 23);
+            this.btnAddCustomer.Size = new System.Drawing.Size(93, 20);
             this.btnAddCustomer.TabIndex = 3;
             this.btnAddCustomer.Text = "Add Customer";
             this.btnAddCustomer.UseVisualStyleBackColor = true;
@@ -341,8 +342,8 @@ namespace DeliveryApp.Presentation
             // lblOrderTitleRight
             // 
             this.lblOrderTitleRight.AutoSize = true;
-            this.lblOrderTitleRight.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblOrderTitleRight.Location = new System.Drawing.Point(269, 19);
+            this.lblOrderTitleRight.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblOrderTitleRight.Location = new System.Drawing.Point(231, 16);
             this.lblOrderTitleRight.Name = "lblOrderTitleRight";
             this.lblOrderTitleRight.Size = new System.Drawing.Size(92, 15);
             this.lblOrderTitleRight.TabIndex = 1;
@@ -351,8 +352,8 @@ namespace DeliveryApp.Presentation
             // lblOrderTitleLeft
             // 
             this.lblOrderTitleLeft.AutoSize = true;
-            this.lblOrderTitleLeft.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblOrderTitleLeft.Location = new System.Drawing.Point(19, 34);
+            this.lblOrderTitleLeft.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblOrderTitleLeft.Location = new System.Drawing.Point(16, 29);
             this.lblOrderTitleLeft.Name = "lblOrderTitleLeft";
             this.lblOrderTitleLeft.Size = new System.Drawing.Size(64, 15);
             this.lblOrderTitleLeft.TabIndex = 0;
@@ -360,9 +361,9 @@ namespace DeliveryApp.Presentation
             // 
             // OrdersForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 544);
+            this.ClientSize = new System.Drawing.Size(351, 471);
             this.Controls.Add(this.grpBxOrders);
             this.Name = "OrdersForm";
             this.grpBxOrders.ResumeLayout(false);

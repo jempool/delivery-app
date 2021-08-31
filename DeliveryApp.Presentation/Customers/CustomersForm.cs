@@ -62,7 +62,7 @@ namespace DeliveryApp.Presentation
 
             if (this.btnCreateCustomer.Text == "Update")
             {
-                Customer customerToUpdate = new(){
+                Customer customerToUpdate = new Customer(){
                     Id = selectedCustomer.Id,
                     Name = customerName,
                     PhoneNumber = Convert.ToInt32(customerFono),

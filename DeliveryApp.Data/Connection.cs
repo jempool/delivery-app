@@ -10,7 +10,7 @@ namespace DeliveryApp.Data
             string connectionString = GetConnectionString();
             var dataTable = new DataTable();
 
-            using (SqlConnection connection = new())
+            using (SqlConnection connection = new SqlConnection())
             {
                 connection.ConnectionString = connectionString;
                 connection.Open();
